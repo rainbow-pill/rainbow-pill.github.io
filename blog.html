@@ -422,7 +422,34 @@
     <section class="py-16 px-4 md:px-8 bg-white">
         <div class="container mx-auto max-w-6xl">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Article 1 -->
+
+                
+ <!-- Article 1 -->
+  <article class="blog-card rounded-lg overflow-hidden shadow-md border border-gray-100" data-category="gender politics">
+    <div class="blog-card-image">
+      <img src="asset/Trad_wife_distortion.png" 
+           alt="Tradwife illustration" 
+           class="w-full h-64 object-cover">
+    </div>
+    <div class="p-6">
+      <div class="flex gap-2 mb-4">
+        <span class="category-pill gender">Gender</span>
+        <span class="category-pill politics">Politics</span>
+      </div>
+      <h3 class="text-xl font-bold mb-2">
+        Tradwives: The disciplined body
+      </h3>
+      <p class="text-gray-600 mb-4">
+       Behind the soft filters and vintage dresses of the Tradwife trend lies a dangerous aesthetic of obedience. This piece explores how the digital staging of feminine submission, beauty, and motherhood use female bodies as a gateway to fascist body politics, reinforcing authoritarian ideals under the guise of tradition and grace.
+      </p>
+      <div class="flex justify-between items-center">
+        <span class="text-sm text-gray-500">Daniela H., Rainbow Pill Collective · June 2025</span>
+        <a href="article-tradwives.html" class="text-deep-violet font-medium hover:underline">Read More →</a>
+      </div>
+    </div>
+  </article>
+               
+                <!-- Article 2 -->
 <article class="blog-card rounded-lg overflow-hidden shadow-md border border-gray-100" data-category="tech masculinity">
     <div class="blog-card-image">
       <img src="asset /daddy_issue.jpg" 
@@ -472,30 +499,6 @@
     </div>
   </article>
 
- <!-- Article 3 -->
-  <article class="blog-card rounded-lg overflow-hidden shadow-md border border-gray-100" data-category="gender politics">
-    <div class="blog-card-image">
-      <img src="asset /DOGE_Distortion.jpg" 
-           alt="Tradwife illustration" 
-           class="w-full h-64 object-cover">
-    </div>
-    <div class="p-6">
-      <div class="flex gap-2 mb-4">
-        <span class="category-pill gender">Gender</span>
-        <span class="category-pill politics">Politics</span>
-      </div>
-      <h3 class="text-xl font-bold mb-2">
-        Tradwives: The disciplined body
-      </h3>
-      <p class="text-gray-600 mb-4">
-       Behind the soft filters and vintage dresses of the Tradwife trend lies a dangerous aesthetic of obedience. This piece explores how the digital staging of feminine submission, beauty, and motherhood use female bodies as a gateway to fascist body politics, reinforcing authoritarian ideals under the guise of tradition and grace.
-      </p>
-      <div class="flex justify-between items-center">
-        <span class="text-sm text-gray-500">Daniela H., Rainbow Pill Collective · June 2025</span>
-        <a href="article-tradwives.html" class="text-deep-violet font-medium hover:underline">Read More →</a>
-      </div>
-    </div>
-  </article>
             
             <!-- No Results Message -->
             <div id="noResults" class="hidden py-16 text-center">
@@ -616,10 +619,10 @@
         let currentIndex = 0;
         
         const galleryImages = [
-            "https://framagit.org/rainbow.pill.collective/rainbow-pill-site/-/blob/main/asset/expo_boite_ouverte.jpeg?ref_type=heads",
-            "https://framagit.org/rainbow.pill.collective/rainbow-pill-site/-/blob/main/asset/People_interacting.jpg?ref_type=heads",
-            "https://framagit.org/rainbow.pill.collective/rainbow-pill-site/-/blob/main/asset/Manosphere_pill.jpeg?ref_type=heads",
-            "https://framagit.org/rainbow.pill.collective/rainbow-pill-site/-/blob/main/asset/Expo_boite_fermé.jpeg?ref_type=heads"
+            "asset /expo_boite_ouverte.jpeg?ref_type=heads",
+            "asset /People_interacting.jpg?ref_type=heads",
+            "asset /Manosphere_pill.jpeg?ref_type=heads",
+            "asset /Expo_boite_fermé.jpeg?ref_type=heads"
         ];
         
         galleryItems.forEach(item => {
