@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Lightbox2 CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects & Exhibitions - RAINBOW PILL COLLECTIVE</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Base styles */
+        :root {
+            --acid-green: #00FF66;
+            --deep-violet: #6600FF;
+            --magenta: #FF00FF;
+            --black: #000000;
+            --white: #FFFFFF;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--black);
+            line-height: 1.5;
+            overflow-x: hidden;
+        }
+        
+        .noise {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 250 250' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            opacity: 0.05;
+            pointer-events: none;
+            z-index: 1000;
+        }
+        
+        .mono {
+            font-family: 'Space Mono', monospace;
+        }
+        
+        /* Glitch effect */
+        .glitch {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .glitch::before,
+        .glitch::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.8;
+        }
+        
+        .glitch::before {
+            left: 2px;
+            text-shadow: -1px 0 var(--acid-green);
+            clip: rect(44px, 450px, 56px, 0);
+            animation: glitch-anim 5s infinite linear alternate-reverse;
+        }
+        
+        .glitch::after {
+            left: -2px;
+            text-shadow: -1px 0 var(--magenta);
+            clip: rect(44px, 450px, 56px, 0);
+            animation: glitch-anim2 5s infinite linear alternate-reverse;
+        }
+        
+        @keyframes glitch-anim {
+            0% {
+                clip: rect(42px, 9999px, 44px, 0);
+            }
+            5% {
+                clip: rect(12px, 9999px, 59px, 0);
+            }
+            10% {
+                clip: rect(48px, 9999px, 29px, 0);
+            }
+            15.0% {
+                clip: rect(42px, 9999px, 73px, 0);
+            }
+            20% {
+                clip: rect(63px, 9999px, 27px, 0);
+            }
+            25% {
+                clip: rect(34px, 9999px, 55px, 0);
+            }
+            30.0% {
+                clip: rect(86px, 9999px, 73px, 0);
+            }
+            35% {
+                clip: rect(20px, 9999px, 20px, 0);
+            }
+            40% {
+                clip: rect(26px, 9999px, 60px, 0);
+            }
+            45% {
+                clip: rect(25px, 9999px, 66px, 0);
+            }
+            50% {
+                clip: rect(57px, 9999px, 98px, 0);
+            }
+            55.0% {
+                clip: rect(5px, 9999px, 46px, 0);
+            }
+            60.0% {
+                clip: rect(82px, 9999px, 31px, 0);
+            }
+            65% {
+                clip: rect(54px, 9999px, 27px, 0);
+            }
+            70% {
+                clip: rect(28px, 9999px, 99px, 0);
+            }
+            75% {
+                clip: rect(45px, 9999px, 69px, 0);
+            }
+            80% {
+                clip: rect(23px, 9999px, 85px, 0);
+            }
+            85.0% {
+                clip: rect(54px, 9999px, 84px, 0);
+            }
+            90% {
+                clip: rect(45px, 9999px, 47px, 0);
+            }
+            95% {
+                clip: rect(37px, 9999px, 20px, 0);
+            }
+            100% {
+                clip: rect(4px, 9999px, 91px, 0);
+            }
+        }
+        
+        @keyframes glitch-anim2 {
+            0% {
+                clip: rect(65px, 9999px, 100px, 0);
+            }
+            5% {
+                clip: rect(52px, 9999px, 74px, 0);
+            }
+            10% {
+                clip: rect(79px, 9999px, 85px, 0);
+            }
+            15.0% {
+                clip: rect(75px, 9999px, 5px, 0);
+            }
+            20% {
+                clip: rect(67px, 9999px, 61px, 0);
+            }
+            25% {
+                clip: rect(14px, 9999px, 79px, 0);
+            }
+            30.0% {
+                clip: rect(1px, 9999px, 66px, 0);
+            }
+            35% {
+                clip: rect(86px, 9999px, 30px, 0);
+            }
+            40% {
+                clip: rect(23px, 9999px, 98px, 0);
+            }
+            45% {
+                clip: rect(85px, 9999px, 72px, 0);
+            }
+            50% {
+                clip: rect(71px, 9999px, 75px, 0);
+            }
+            55.0% {
+                clip: rect(2px, 9999px, 48px, 0);
+            }
+            60.0% {
+                clip: rect(30px, 9999px, 16px, 0);
+            }
+            65% {
+                clip: rect(59px, 9999px, 50px, 0);
+            }
+            70% {
+                clip: rect(41px, 9999px, 62px, 0);
+            }
+            75% {
+                clip: rect(2px, 9999px, 82px, 0);
+            }
+            80% {
+                clip: rect(47px, 9999px, 73px, 0);
+            }
+            85.0% {
+                clip: rect(3px, 9999px, 27px, 0);
+            }
+            90% {
+                clip: rect(26px, 9999px, 55px, 0);
+            }
+            95% {
+                clip: rect(42px, 9999px, 97px, 0);
+            }
+            100% {
+                clip: rect(38px, 9999px, 49px, 0);
+            }
+        }
+        
+        /* Custom utility classes */
+        .text-acid-green {
+            color: var(--acid-green);
+        }
+        
+        .text-deep-violet {
+            color: var(--deep-violet);
+        }
+        
+        .text-magenta {
+            color: var(--magenta);
+        }
+        
+        .bg-acid-green {
+            background-color: var(--acid-green);
+        }
+        
+        .bg-deep-violet {
+            background-color: var(--deep-violet);
+        }
+        
+        .bg-magenta {
+            background-color: var(--magenta);
+        }
+        
+        /* Language selector */
+        .language-selector {
+            position: relative;
+        }
+        
+        .language-options {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background-color: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.25rem;
+            padding: 0.5rem 0;
+            min-width: 120px;
+            z-index: 50;
+        }
+        
+        .language-option {
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+        }
+        
+        .language-option:hover {
+            background-color: #f3f4f6;
+        }
+        
+        /* Gallery */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.02);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+        
+        /* Lightbox */
+        .lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+        
+        .lightbox.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        
+        .lightbox-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90%;
+        }
+        
+        .lightbox-content img {
+            max-width: 100%;
+            max-height: 90vh;
+            object-fit: contain;
+        }
+        
+        .lightbox-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            z-index: 1001;
+        }
+        
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+            z-index: 1001;
+        }
+        
+        .lightbox-nav button {
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 1rem;
+            cursor: pointer;
+            font-size: 1.5rem;
+            border-radius: 50%;
+            width: 3rem;
+            height: 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 1rem;
+        }
+        
+        .lightbox-nav button:hover {
+            background: rgba(0, 0, 0, 0.8);
+        }
+     
+    </style>
+</head>
+<body class="antialiased">
+    <div class="noise"></div>
+    
+    <script>
+        const newsletterForm = document.getElementById("newsletterForm");
+        const newsletterSuccess = document.getElementById("newsletterSuccess");
+      
+        if (newsletterForm) {
+          newsletterForm.addEventListener("submit", async function (e) {
+            e.preventDefault();
+      
+            const formData = new FormData(newsletterForm);
+            const response = await fetch(newsletterForm.action, {
+              method: "POST",
+              body: formData,
+              headers: { 'Accept': 'application/json' }
+            });
+      
+            if (response.ok) {
+              newsletterForm.reset();
+              newsletterSuccess.classList.remove("hidden");
+            } else {
+              alert("Oops! Something went wrong.");
+            }
+          });
+        }
+      </script>
+      
+    <!-- Header -->
+    <header class="fixed top-0 left-0 w-full z-50 bg-white bg-opacity-90 backdrop-blur-sm border-b border-gray-200">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <!-- Logo img -->
+                <div class="mr-3 w-10 h-10">
+                    <img src="asset/logo_du_collectif.jpeg" alt="Logo Rainbow Pill Collective" class="w-10 h-10 object-cover rounded-none">
+                    <rect width="100%" height="100%" fill="#f5f5f5"/>
+                        <path d="M20,8 C26,8 30,12 30,20 C30,28 26,32 20,32 C14,32 10,28 10,20 C10,12 14,8 20,8 Z" fill="#000"/>
+                        <path d="M20,8 C14,8 10,12 10,20 C10,28 14,32 20,32" fill="none" stroke="#00FF66" stroke-width="2"/>
+                        <path d="M20,32 C26,32 30,28 30,20 C30,12 26,8 20,8" fill="none" stroke="#6600FF" stroke-width="2"/>
+                </img>
+                </div>
+                
+                <h1 class="text-xl md:text-2xl font-bold tracking-tighter">
+                    <a href="home.html">
+                        <span class="glitch" data-text="RAINBOW">RAINBOW</span>
+                        <span class="glitch" data-text="PILL">PILL</span>
+                        <span class="glitch" data-text="COLLECTIVE">COLLECTIVE</span>
+                    </a>
+                </h1>
+            </div>
+            
+            <div class="flex items-center">
+                <nav class="hidden md:flex space-x-6 text-sm uppercase tracking-wider mr-6">
+                    <a href="home.html" class="nav-item px-2 py-1 hover:text-acid-green transition-colors">Home</a>
+                    <a href="blog.html" class="nav-item px-2 py-1 hover:text-acid-green transition-colors">Articles</a>
+                    <a href="exhibition.html" class="nav-item px-2 py-1 hover:text-acid-green transition-colors">Projects</a>
+                    <a href="about.html" class="nav-item px-2 py-1 hover:text-acid-green transition-colors">About us</a>
+                    <a href="contact.html" class="nav-item px-2 py-1 hover:text-acid-green transition-colors">Contact</a>
+                </nav>
+                <!--
+                <div class="language-selector">
+                    <button id="languageToggle" class="flex items-center text-sm uppercase tracking-wider focus:outline-none">
+                        <span id="currentLanguage">EN</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div id="languageOptions" class="language-options hidden">
+                        <div class="language-option" data-lang="en">English</div>
+                        <div class="language-option" data-lang="fr">Français</div>
+                        <div class="language-option" data-lang="de">Deutsch</div>
+                    </div>
+                </div>
+                -->
+                
+                <button class="md:hidden ml-4 text-black focus:outline-none" id="menuToggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div class="hidden md:hidden bg-white border-t border-gray-200 absolute w-full left-0" id="mobileMenu">
+            <div class="container mx-auto px-4 py-2">
+                <nav class="flex flex-col space-y-3 text-sm uppercase tracking-wider">
+                    <a href="home.html" class="px-2 py-1 hover:text-acid-green transition-colors">Home</a>
+                  <a href="blog.html" class="px-2 py-1 hover:text-acid-green transition-colors">Articles</a>
+                  <a href="exhibition.html" class="px-2 py-1 hover:text-acid-green transition-colors">Projects</a>
+                  <a href="about.html" class="px-2 py-1 hover:text-acid-green transition-colors">About us</a>
+                  <a href="contact.html" class="px-2 py-1 hover:text-acid-green transition-colors">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <!-- Page Header -->
+    <section class="pt-32 pb-16 px-4 md:px-8 bg-white relative overflow-hidden">
+        <div class="absolute inset-0 pointer-events-none">
+            <div class="absolute top-1/4 left-1/4 w-64 h-64 bg-acid-green opacity-10 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-1/4 right-1/4 w-64 h-64 bg-deep-violet opacity-10 rounded-full blur-3xl"></div>
+        </div>
+        
+        <div class="container mx-auto max-w-6xl relative z-10">
+            <div class="max-w-3xl">
+                <span class="inline-block text-xs uppercase tracking-widest text-acid-green mb-4">Our Work</span>
+                <h1 class="text-5xl md:text-6xl font-bold title-font mb-6">
+                    <span class="glitch" data-text="PROJECTS">PROJECTS</span> &
+                    <span class="glitch" data-text="EXHIBITIONS">EXHIBITIONS</span>
+                </h1>
+                <p class="text-xl text-gray-600 max-w-2xl">
+                    Exploring the intersections of technology, art, and critical theory through immersive exhibitions and collaborative projects.
+                </p>
+            </div>
+        </div>
+    </section>
+    
+<!-- Past Exhibitions -->
+<section class="py-16 px-4 md:px-8 bg-white">
+    <div class="container mx-auto max-w-6xl">
+      <h2 class="text-3xl md:text-4xl font-bold mb-12 relative inline-block">
+        <span class="relative z-10">Events</span>
+        <span class="absolute -bottom-2 left-0 w-full h-3 bg-acid-green opacity-30"></span>
+      </h2>
+
+ <!-- Volksbühne 15.10. -->
+        
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20">
+        <div class="relative overflow-hidden rounded-lg shadow-xl">
+          <img src="asset/VB1.jpeg" 
+               alt="Manosphere meets Volksbühne Roter Salon" 
+               class="w-full h-auto object-cover">
+        </div>
+  
+<div>
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">Entering the Manosphere: Berlin - Volksbühne Roter Salon</h3>
+          <div class="flex items-center mb-6">
+            <div class="flex items-center mr-6">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-acid-green" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              </svg>
+              <span>October 2025</span>
+            </div>
+            <div class="flex items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-acid-green" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+              <span>Volksbühne Roter Salon, Berlin, Germany</span>
+            </div>
+          </div>
+  
+          <div class="prose prose-lg mb-8">
+            <p>
+            On oct 15th, 2025, we were at Roter Salon at Volksbühne Berlin to be part of a book presentation and panel discussion on AI and fascism. Rainer Mühlhoff presented his book "KI und der neue Faschismus", followed by an engaging panel discussion on current authoritarian tendencies. 
+            </p>
+            <p>
+           In our exhibition, we draw the connection between social media, big data, antifeminism and authoritarian politics, so this event was a great fit for our work. 
+            </p>
+            <p>
+            We accompanied the book presentation and podium discussion with our exhibition and video installation - and we brought along our popular zines and stickers!
+            </p>
+            <p>
+           Thank you for an exciting night full of intense discussions! 
+            </p>
+          </div>
+  
+          <div class="flex flex-wrap gap-3">
+            <span class="px-3 py-1 bg-gray-100 rounded-full text-sm">Politics</span>
+            <span class="px-3 py-1 bg-gray-100 rounded-full text-sm">Democracy</span>
+            <span class="px-3 py-1 bg-gray-100 rounded-full text-sm">Installation</span>
+            <span class="px-3 py-1 bg-gray-100 rounded-full text-sm">Antifascism</span>
+          </div>
+</div>
+</div>
+
+<!-- Gallery VB -->
+<h3 class="text-2xl font-bold mb-6">Event Gallery</h3>
+<div class="gallery-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+  <a href="asset/VB2.jpeg" data-lightbox="exhibition" data-title="Module 1" class="gallery-item">
+    <img src="asset/VB2.jpeg" alt="Module 1" class="w-full h-64 object-cover rounded-lg shadow-md transition-transform duration-300 hover:scale-105">
+  </a>
+  <a href="asset/VB3.jpeg" data-lightbox="exhibition" data-title="Module 2" class="gallery-item">
+    <img src="asset/VB3.jpeg" alt="Module 1" class="w-full h-64 object-cover rounded-lg shadow-md transition-transform duration-300 hover:scale-105">
+  </a>
+  <a href="asset/VB4.jpeg" data-lightbox="exhibition" data-title="Setting up" class="gallery-item">
+    <img src="asset/VB4.jpeg" alt="Setting up" class="w-full h-64 object-cover rounded-lg shadow-md transition-transform duration-300 hover:scale-105">
+  </a>
+  <a href="asset/VB5.jpeg" data-lightbox="exhibition" data-title="In action" class="gallery-item">
+    <img src="asset/VB5.jpeg" alt="In action" class="w-full h-64 object-cover rounded-lg shadow-md transition-transform duration-300 hover:scale-105">
+  </a>
+ </div>
+
+
+<!-- Möca 2.8.25 -->
+        
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20" style="padding-top: 60px;" >
+    <div class="relative overflow-hidden rounded-lg shadow-xl">
+      <img src="asset/M-Room.jpeg" 
+          alt="Entering the Manosphere" 
+          class="w-full h-auto object-cover">
+    </div>
+<div>
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">Entering the Manosphere: Berlin - Möca</h3>
+          <div class="flex items-center mb-6">
+            <div class="flex items-center mr-6">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-acid-green" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              </svg>
+              <span>August 2025</span>
+            </div>
+            <div class="flex items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-acid-green" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+              <span>Möca Forum, Berlin, Germany</span>
+            </div>
+          </div>
+  
+          <div class="prose prose-lg mb-8">
+            <p>
+            We showed our pop-up exhibition "Entering the Manosphere" at Möca Forum in Berlin, Kreuzberg on Aug 2nd, 2025. 
+            </p>
+            <p>
+           In our modules, visitors can enter the Manosphere and understand how it influences our societies and democracies. 
+            </p>
+            <p>
+            In addition, our video installation shows the real-life and political consequences of the digital world. 
+            </p>
+              <p>
+            Around 60 visitors interacted with our installation. Thank you for engaging discussions and debates! We are already planning the next events - stay posted!
+            </p>
+          </div>
+  
+          <div class="flex flex-wrap gap-3">
+            <span class="px-3 py-1 bg-gray-100 rounded-full text-sm">Politics</span>
+            <span class="px-3 py-1 bg-gray-100 rounded-full text-sm">Democracy</span>
+            <span class="px-3 py-1 bg-gray-100 rounded-full text-sm">Interactive Installation</span>
+            <span class="px-3 py-1 bg-gray-100 rounded-full text-sm">Video Installation</span>
+          </div>
+</div>
+</div>
+ 
+
+<!-- Gallery Möca -->
+<h3 class="text-2xl font-bold mb-6">Event Gallery</h3>
+<div class="gallery-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+  <a href="asset/M-Module1.jpeg" data-lightbox="exhibition" data-title="Module 1" class="gallery-item">
+    <img src="asset/M-Module1.jpeg" alt="Module 1" class="w-full h-64 object-cover rounded-lg shadow-md transition-transform duration-300 hover:scale-105">
+  </a>
+  <a href="asset/M-Visitors.jpeg" data-lightbox="exhibition" data-title="Video Installation" class="gallery-item">
+    <img src="asset/M-Visitors.jpeg" alt="Video Installation" class="w-full h-64 object-cover rounded-lg shadow-md transition-transform duration-300 hover:scale-105">
+  </a>
+  <a href="asset/M-Room.jpeg" data-lightbox="exhibition" data-title="Exhibition Möca" class="gallery-item">
+    <img src="asset/M-Room.jpeg" alt="Exhibition Möca" class="w-full h-64 object-cover rounded-lg shadow-md transition-transform duration-300 hover:scale-105">
+  </a>
+  <a href="asset/M-Module2.jpeg" data-lightbox="exhibition" data-title="Module 2" class="gallery-item">
+    <img src="asset/M-Module2.jpeg" alt="Module 2" class="w-full h-64 object-cover rounded-lg shadow-md transition-transform duration-300 hover:scale-105">
+  </a>
+ </div>
+
+      <!-- Osnabrück 3.6.25 -->  
+  
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20" style="padding-top: 60px;">
+        <div class="relative overflow-hidden rounded-lg shadow-xl">
+          <img src="asset/Expo_boite_fermé.jpeg" 
+               alt="KI und Zukunft der Demokratie" 
+               class="w-full h-auto object-cover">
+        </div>
+  
+        <div>
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">Entering the Manosphere: Osnabrück</h3>
+          <div class="flex items-center mb-6">
+            <div class="flex items-center mr-6">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-acid-green" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              </svg>
+              <span>June 2025</span>
+            </div>
+            <div class="flex items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-acid-green" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+              <span>Theater Osnabrück, Osnabrück, Germany</span>
+            </div>
+          </div>
+  
+          <div class="prose prose-lg mb-8">
+            <p>
+            Our first pop-up event appeared at Theater Osnabrück on the 3rd of June, 2025. It was part of the event "KI und die Zukunft der Demokratie" by the Ethics and Critical Theory of AI research group (University of Osnabrück).
+            </p>
+            <p>
+            Through our installation and its thought-provoking displays, we examined how digital technologies and culture are reshaping political discourse, democratic processes, and social dynamics.
+            </p>
+            <p>
+            The exhibition featured our signature "Entering the Manosphere" installation, which invited visitors to engage with alternative perspectives on technology and society, challenging the reductive narratives often found in mainstream tech discourse.
+            </p>
+          </div>
+
+          <div class="flex flex-wrap gap-3">
+            <span class="px-3 py-1 bg-gray-100 rounded-full text-sm">AI Ethics</span>
+            <span class="px-3 py-1 bg-gray-100 rounded-full text-sm">Democracy</span>
+            <span class="px-3 py-1 bg-gray-100 rounded-full text-sm">Interactive Installation</span>
+            <span class="px-3 py-1 bg-gray-100 rounded-full text-sm">Critical Theory</span>
+          </div>
+  
+          <div class="mt-8">
+            <a href="https://outreachlab.org/KI-und-Zukunft-der-Demokratie" target="_blank" class="inline-flex items-center px-6 py-3 bg-black text-white rounded-full hover:bg-deep-violet transition-colors">
+              <span>Visit Event Page</span>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
+            </a>
+          </div>
+            <!--
+         <div class="mt-8">
+           <a href="asset/20250701 RainbowPill-Manosphere_Techsheet_compressed.pdf" target="_blank" class="inline-flex items-center px-6 py-3 bg-black text-white rounded-full hover:bg-deep-violet transition-colors">
+             <span>Download Tech Sheet</span>
+             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+             </svg>
+           </a>
+         </div>
+            -->
+        </div>
+      </div>
+  
+<!-- Exhibition Gallery Osna -->
+<h3 class="text-2xl font-bold mb-6">Event Gallery</h3>
+<div class="gallery-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+   <a href="asset/Chad_and_Stacy.jpeg" data-lightbox="exhibition" data-title="Chad and Stacy" class="gallery-item">
+    <img src="asset/Chad_and_Stacy.jpeg" alt="Chad and Stacy" class="w-full h-64 object-cover rounded-lg shadow-md transition-transform duration-300 hover:scale-105">
+  </a>
+   <a href="asset/Expo_boite_fermé.jpeg" data-lightbox="exhibition" data-title="Closed Box Installation" class="gallery-item">
+    <img src="asset/Expo_boite_fermé.jpeg" alt="Closed Box Installation" class="w-full h-64 object-cover rounded-lg shadow-md transition-transform duration-300 hover:scale-105">
+  </a>
+  <a href="asset/Manosphere_pill.jpeg" data-lightbox="exhibition" data-title="Manosphere Pill" class="gallery-item">
+    <img src="asset/Manosphere_pill.jpeg" alt="Manosphere Pill" class="w-full h-64 object-cover rounded-lg shadow-md transition-transform duration-300 hover:scale-105">
+  </a>
+  <a href="asset/KI-Zukunft-der-Demokratie.png" data-lightbox="exhibition" data-title="Manosphere Pill" class="gallery-item">
+    <img src="asset/KI-Zukunft-der-Demokratie.png" alt="Manosphere Pill" class="w-full h-64 object-cover rounded-lg shadow-md transition-transform duration-300 hover:scale-105">
+  </a>
+ </div>
+</div>
+  </section>
+  
+  
+    
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-close" id="lightboxClose">×</div>
+        <div class="lightbox-content">
+            <img id="lightboxImage" src="" alt="Lightbox Image">
+        </div>
+        <div class="lightbox-nav">
+            <button id="prevButton">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                </svg>
+            </button>
+            <button id="nextButton">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+            </button>
+        </div>
+    </div>
+    
+    <!-- Collaboration Section -->
+    <section class="py-16 px-4 md:px-8 bg-gray-50">
+        <div class="container mx-auto max-w-6xl">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <span class="inline-block text-xs uppercase tracking-widest text-acid-green mb-4">Collaborate with us</span>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">Let's Create Something Together</h2>
+                    <div class="prose prose-lg mb-8">
+                        <p>
+                            We're always open to collaborations, partnerships, and participation in events that align with our values and mission. Whether you're organizing an exhibition, conference, workshop, or any other event that explores the intersections of technology, art, and critical theory, we'd love to hear from you.
+                        </p>
+                        <p>
+                            Our collective brings together diverse perspectives and skills, allowing us to contribute in various ways - from interactive installations and performances to talks, workshops, and panel discussions.
+                        </p>
+                    </div>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="contact.html" class="inline-flex items-center justify-center px-6 py-3 bg-black text-white rounded-full hover:bg-deep-violet transition-colors">
+                            <span>Get in Touch</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="relative">
+                    <div class="absolute inset-0 bg-gradient-to-r from-acid-green to-deep-violet opacity-20 blur-2xl rounded-full"></div>
+                    <div class="relative z-10 bg-white p-8 rounded-lg shadow-xl">
+                        <h3 class="text-2xl font-bold mb-6">How We Can Collaborate</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="flex">
+                                <div class="flex-shrink-0 h-12 w-12 flex items-center justify-center rounded-full bg-acid-green bg-opacity-10 text-acid-green">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                                    </svg>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-lg font-semibold mb-1">Interactive Installations</h4>
+                                    <p class="text-gray-600">Custom-designed experiences that engage audiences in critical reflection.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex">
+                                <div class="flex-shrink-0 h-12 w-12 flex items-center justify-center rounded-full bg-deep-violet bg-opacity-10 text-deep-violet">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                                    </svg>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-lg font-semibold mb-1">Talks & Panels</h4>
+                                    <p class="text-gray-600">Thought-provoking discussions on technology, feminism, and social change.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex">
+                                <div class="flex-shrink-0 h-12 w-12 flex items-center justify-center rounded-full bg-magenta bg-opacity-10 text-magenta">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                                    </svg>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-lg font-semibold mb-1">Workshops</h4>
+                                    <p class="text-gray-600">Hands-on sessions that blend technical skills with critical perspectives.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex">
+                                <div class="flex-shrink-0 h-12 w-12 flex items-center justify-center rounded-full bg-black bg-opacity-10 text-black">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Newsletter Section -->
+<section class="py-16 px-4 md:px-8 bg-white border-t border-gray-200">
+    <div class="container mx-auto max-w-6xl">
+      <div class="max-w-2xl mx-auto text-center">
+        <h2 class="text-3xl font-bold mb-4">Stay Connected</h2>
+        <p class="text-lg text-gray-600 mb-8">
+          Subscribe to our newsletter to receive the latest articles, event announcements, and updates from the Rainbow Pill Collective.
+        </p>
+  
+        <form id="newsletterForm" action="https://formspree.io/f/xwpqbzdk" method="POST" class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+          <input
+            type="email"
+            name="email"
+            required
+            placeholder="Your email address"
+            class="flex-grow px-4 py-3 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-acid-green focus:border-transparent"
+          />
+          <button
+            type="submit"
+            class="px-6 py-3 bg-black text-white rounded-full hover:bg-deep-violet transition-colors"
+          >
+            Subscribe
+          </button>
+        </form>
+  
+        <!-- ✅ Message de succès -->
+        <div id="newsletterSuccess" class="hidden text-green-600 font-semibold mt-4">
+          ✅ Thanks for subscribing!
+        </div>
+      </div>
+    </div>
+  </section>  
+    
+    <!-- Footer -->
+    <footer class="py-12 px-4 md:px-8 bg-white border-t border-gray-200">
+        <div class="container mx-auto max-w-6xl">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <div class="flex items-center">
+                        <!-- Logo in footer -->
+                        <div class="mr-3 w-8 h-8">
+                            <img src="asset/logo_du_collectif.jpeg" alt="Logo Rainbow Pill Collective" class="w-10 h-10 object-cover rounded-none">
+                            <rect width="100%" height="100%" fill="#f5f5f5"/>
+                                <path d="M20,8 C26,8 30,12 30,20 C30,28 26,32 20,32 C14,32 10,28 10,20 C10,12 14,8 20,8 Z" fill="#000"/>
+                                <path d="M20,8 C14,8 10,12 10,20 C10,28 14,32 20,32" fill="none" stroke="#00FF66" stroke-width="2"/>
+                                <path d="M20,32 C26,32 30,28 30,20 C30,12 26,8 20,8" fill="none" stroke="#6600FF" stroke-width="2"/>
+                            </img>
+                        </div>
+                         <h1 class="text-xl font-bold tracking-tighter text-black"> RAINBOW PILL COLLECTIVE </h1>
+                    </div>
+                </div>
+                
+                <nav class="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm uppercase tracking-wider mb-6 md:mb-0">
+                    <a href="home.html" class="hover:text-acid-green transition-colors">Home</a>
+                    <a href="blog.html" class="hover:text-acid-green transition-colors">Articles</a>
+                    <a href="exhibition.html" class="hover:text-acid-green transition-colors">Projects</a>
+                    <a href="about.html" class="hover:text-acid-green transition-colors">About us</a>
+                    <a href="contact.html" class="hover:text-acid-green transition-colors">Contact</a>
+                    </nav>
+                
+                <div class="text-sm text-gray-600">
+                    © 2025 Rainbow Pill Collective
+                </div>
+            </div>
+            
+            <div class="mt-8 pt-8 border-t border-gray-200 flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center mb-4 md:mb-0">
+                    <a href="https://www.instagram.com/rainbow.pill.collective/" target="_blank" class="text-gray-600 hover:text-magenta transition-colors mr-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                        </svg>
+                    </a>
+                    <a href="/cdn-cgi/l/email-protection#ccbeada5a2aea3bbe2bca5a0a08cbca3bfb8a9a3e2afa3a1" class="text-gray-600 hover:text-acid-green transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                        </svg>
+                    </a>
+                </div>
+                
+                <div class="text-xs text-gray-500">
+                    <a href="#" class="hover:underline mr-4">Privacy Policy</a>
+                    <a href="#" class="hover:underline">Terms of Use</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Language selector
+        const languageToggle = document.getElementById('languageToggle');
+        const languageOptions = document.getElementById('languageOptions');
+        const currentLanguage = document.getElementById('currentLanguage');
+        const languageOptionElements = document.querySelectorAll('.language-option');
+        
+        languageToggle.addEventListener('click', () => {
+            languageOptions.classList.toggle('hidden');
+        });
+        
+        languageOptionElements.forEach(option => {
+            option.addEventListener('click', () => {
+                currentLanguage.textContent = option.dataset.lang.toUpperCase();
+                languageOptions.classList.add('hidden');
+            });
+        });
+        
+        // Close language dropdown when clicking outside
+        document.addEventListener('click', (event) => {
+            if (!languageToggle.contains(event.target) && !languageOptions.contains(event.target)) {
+                languageOptions.classList.add('hidden');
+            }
+        });
+        
+        // Gallery and Lightbox
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImage = document.getElementById('lightboxImage');
+        const lightboxClose = document.getElementById('lightboxClose');
+        const prevButton = document.getElementById('prevButton');
+        const nextButton = document.getElementById('nextButton');
+        
+        let currenthome = 0;
+        
+        const galleryImages = [
+            "https://framagit.org/rainbow.pill.collective/rainbow-pill-site/-/blob/main/asset/expo_boite_ouverte.jpeg?ref_type=heads",
+            "https://framagit.org/rainbow.pill.collective/rainbow-pill-site/-/blob/main/asset/People_interacting.jpg?ref_type=heads",
+            "https://framagit.org/rainbow.pill.collective/rainbow-pill-site/-/blob/main/asset/Manosphere_pill.jpeg?ref_type=heads",
+            "https://framagit.org/rainbow.pill.collective/rainbow-pill-site/-/blob/main/asset/Expo_boite_fermé.jpeg?ref_type=heads"
+        ];
+        
+        galleryItems.forEach(item => {
+            item.addEventListener('click', () => {
+                currenthome = parseInt(item.dataset.home);
+                lightboxImage.src = galleryImages[currenthome];
+                lightbox.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+        
+        lightboxClose.addEventListener('click', () => {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+        
+        prevButton.addEventListener('click', () => {
+            currenthome = (currenthome - 1 + galleryImages.length) % galleryImages.length;
+            lightboxImage.src = galleryImages[currenthome];
+        });
+        
+        nextButton.addEventListener('click', () => {
+            currenthome = (currenthome + 1) % galleryImages.length;
+            lightboxImage.src = galleryImages[currenthome];
+        });
+        
+        // Close lightbox with escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+    </script>
+    <!-- Lightbox2 JS -->
+<scr

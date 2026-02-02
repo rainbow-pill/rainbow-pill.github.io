@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The Disciplined Body: Tradwives, Right-Wing Body Images, and the Aesthetics of Obedience | Rainbow Pill Collective</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Base styles */
+    :root {
+        --acid-green: #00FF66;
+        --deep-violet: #6600FF;
+        --magenta: #FF00FF;
+        --black: #000000;
+        --white: #FFFFFF;
+    }
+    
+    body {
+        font-family: 'Inter', sans-serif;
+        color: var(--black);
+        line-height: 1.5;
+        overflow-x: hidden;
+    }
+    
+    .noise {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 250 250' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        opacity: 0.05;
+        pointer-events: none;
+        z-index: 1000;
+    }
+    
+    .mono {
+        font-family: 'Space Mono', monospace;
+    }
+    
+    /* Glitch effect */
+    .glitch {
+        position: relative;
+        display: inline-block;
+    }
+    
+    .glitch::before,
+    .glitch::after {
+        content: attr(data-text);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.8;
+    }
+    
+    .glitch::before {
+        left: 2px;
+        text-shadow: -1px 0 var(--acid-green);
+        clip: rect(44px, 450px, 56px, 0);
+        animation: glitch-anim 5s infinite linear alternate-reverse;
+    }
+    
+    .glitch::after {
+        left: -2px;
+        text-shadow: -1px 0 var(--magenta);
+        clip: rect(44px, 450px, 56px, 0);
+        animation: glitch-anim2 5s infinite linear alternate-reverse;
+    }
+    
+    @keyframes glitch-anim {
+        0% {
+            clip: rect(42px, 9999px, 44px, 0);
+        }
+        5% {
+            clip: rect(12px, 9999px, 59px, 0);
+        }
+        10% {
+            clip: rect(48px, 9999px, 29px, 0);
+        }
+        15.0% {
+            clip: rect(42px, 9999px, 73px, 0);
+        }
+        20% {
+            clip: rect(63px, 9999px, 27px, 0);
+        }
+        25% {
+            clip: rect(34px, 9999px, 55px, 0);
+        }
+        30.0% {
+            clip: rect(86px, 9999px, 73px, 0);
+        }
+        35% {
+            clip: rect(20px, 9999px, 20px, 0);
+        }
+        40% {
+            clip: rect(26px, 9999px, 60px, 0);
+        }
+        45% {
+            clip: rect(25px, 9999px, 66px, 0);
+        }
+        50% {
+            clip: rect(57px, 9999px, 98px, 0);
+        }
+        55.0% {
+            clip: rect(5px, 9999px, 46px, 0);
+        }
+        60.0% {
+            clip: rect(82px, 9999px, 31px, 0);
+        }
+        65% {
+            clip: rect(54px, 9999px, 27px, 0);
+        }
+        70% {
+            clip: rect(28px, 9999px, 99px, 0);
+        }
+        75% {
+            clip: rect(45px, 9999px, 69px, 0);
+        }
+        80% {
+            clip: rect(23px, 9999px, 85px, 0);
+        }
+        85.0% {
+            clip: rect(54px, 9999px, 84px, 0);
+        }
+        90% {
+            clip: rect(45px, 9999px, 47px, 0);
+        }
+        95% {
+            clip: rect(37px, 9999px, 20px, 0);
+        }
+        100% {
+            clip: rect(4px, 9999px, 91px, 0);
+        }
+    }
+    
+    @keyframes glitch-anim2 {
+        0% {
+            clip: rect(65px, 9999px, 100px, 0);
+        }
+        5% {
+            clip: rect(52px, 9999px, 74px, 0);
+        }
+        10% {
+            clip: rect(79px, 9999px, 85px, 0);
+        }
+        15.0% {
+            clip: rect(75px, 9999px, 5px, 0);
+        }
+        20% {
+            clip: rect(67px, 9999px, 61px, 0);
+        }
+        25% {
+            clip: rect(14px, 9999px, 79px, 0);
+        }
+        30.0% {
+            clip: rect(1px, 9999px, 66px, 0);
+        }
+        35% {
+            clip: rect(86px, 9999px, 30px, 0);
+        }
+        40% {
+            clip: rect(23px, 9999px, 98px, 0);
+        }
+        45% {
+            clip: rect(85px, 9999px, 72px, 0);
+        }
+        50% {
+            clip: rect(71px, 9999px, 75px, 0);
+        }
+        55.0% {
+            clip: rect(2px, 9999px, 48px, 0);
+        }
+        60.0% {
+            clip: rect(30px, 9999px, 16px, 0);
+        }
+        65% {
+            clip: rect(59px, 9999px, 50px, 0);
+        }
+        70% {
+            clip: rect(41px, 9999px, 62px, 0);
+        }
+        75% {
+            clip: rect(2px, 9999px, 82px, 0);
+        }
+        80% {
+            clip: rect(47px, 9999px, 73px, 0);
+        }
+        85.0% {
+            clip: rect(3px, 9999px, 27px, 0);
+        }
+        90% {
+            clip: rect(26px, 9999px, 55px, 0);
+        }
+        95% {
+            clip: rect(42px, 9999px, 97px, 0);
+        }
+        100% {
+            clip: rect(38px, 9999px, 49px, 0);
+        }
+    }
+    
+    /* Custom utility classes */
+    .text-acid-green {
+        color: var(--acid-green);
+    }
+    
+    .text-deep-violet {
+        color: var(--deep-violet);
+    }
+    
+    .text-magenta {
+        color: var(--magenta);
+    }
+    
+    .bg-acid-green {
+        background-color: var(--acid-green);
+    }
+    
+    .bg-deep-violet {
+        background-color: var(--deep-violet);
+    }
+    
+    .bg-magenta {
+        background-color: var(--magenta);
+    }
+    
+    /* Language selector */
+    .language-selector {
+        position: relative;
+    }
+    
+    .language-options {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background-color: white;
+        border: 1px solid #e5e7eb;
+        border-radius: 0.25rem;
+        padding: 0.5rem 0;
+        min-width: 120px;
+        z-index: 50;
+    }
+    
+    .language-option {
+        padding: 0.5rem 1rem;
+        cursor: pointer;
+    }
+    
+    .language-option:hover {
+        background-color: #f3f4f6;
+    }
+    
+    /* The Disciplined Body: Tradwives, Right-Wing Body Images, and the Aesthetics of Obedience | Rainbow Pill Collective cards */
+    .Tradwives
+    -card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .Tradwives
+    -card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
+    
+    .Tradwives
+    -card-image {
+        height: 200px;
+        overflow: hidden;
+    }
+    
+    .Tradwives
+    -card-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+    }
+    
+    .Tradwives
+    -card:hover .Tradwives
+    -card-image img {
+        transform: scale(1.05);
+    }
+    
+    /* Category pills */
+    .category-pill {
+        display: inline-block;
+        padding: 0.25rem 0.75rem;
+        border-radius: 9999px;
+        font-size: 0.75rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+    }
+    
+    .category-pill.tech {
+        background-color: rgba(0, 255, 102, 0.1);
+        color: var(--acid-green);
+    }
+    
+    .category-pill.philosophy {
+        background-color: rgba(102, 0, 255, 0.1);
+        color: var(--deep-violet);
+    }
+    
+    .category-pill.feminism {
+        background-color: rgba(255, 0, 255, 0.1);
+        color: var(--magenta);
+    }
+    
+    .category-pill.society {
+        background-color: rgba(0, 0, 0, 0.1);
+        color: var(--black);
+    }
+</style>
+</head>
+<body class="antialiased">
+<div class="noise"></div>
+
+<!-- Header -->
+<header class="fixed top-0 left-0 w-full z-50 bg-white bg-opacity-90 backdrop-blur-sm border-b border-gray-200">
+       <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+           <div class="flex items-center">
+               <!-- Logo SVG -->
+               <div class="mr-3 w-10 h-10">
+                   <img src="asset/logo_du_collectif.jpeg" alt="Logo Rainbow Pill Collective" class="w-10 h-10 object-cover rounded-none">
+                   <rect width="100%" height="100%" fill="#f5f5f5"/>
+                       <path d="M20,8 C26,8 30,12 30,20 C30,28 26,32 20,32 C14,32 10,28 10,20 C10,12 14,8 20,8 Z" fill="#000"/>
+                       <path d="M20,8 C14,8 10,12 10,20 C10,28 14,32 20,32" fill="none" stroke="#00FF66" stroke-width="2"/>
+                       <path d="M20,32 C26,32 30,28 30,20 C30,12 26,8 20,8" fill="none" stroke="#6600FF" stroke-width="2"/>
+               </img>
+               </div>
+                
+               <h1 class="text-xl md:text-2xl font-bold tracking-tighter">
+                   <a href="home.html">
+                       <span class="glitch" data-text="RAINBOW">RAINBOW</span>
+                       <span class="glitch" data-text="PILL">PILL</span>
+                       <span class="glitch" data-text="COLLECTIVE">COLLECTIVE</span>
+                   </a>
+               </h1>
+           </div>
+                         
+        <div class="flex items-center">
+            <nav class="hidden md:flex space-x-6 text-sm uppercase tracking-wider mr-6">
+                <a href="home.html" class="nav-item px-2 py-1 hover:text-acid-green transition-colors">Home</a>
+                <a href="Tradwives
+        
+                .html" class="nav-item px-2 py-1 hover:text-acid-green transition-colors">Articles</a>
+                <a href="exhibition.html" class="nav-item px-2 py-1 hover:text-acid-green transition-colors">Projects</a>
+                <a href="about.html" class="nav-item px-2 py-1 hover:text-acid-green transition-colors">about us</a>
+                <a href="contact.html" class="nav-item px-2 py-1 hover:text-acid-green transition-colors">Contact</a>
+            </nav>
+            <!--
+            <div class="language-selector">
+                <button id="languageToggle" class="flex items-center text-sm uppercase tracking-wider focus:outline-none">
+                    <span id="currentLanguage">EN</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </button>
+                <div id="languageOptions" class="language-options hidden">
+                    <div class="language-option" data-lang="en">English</div>
+                    <div class="language-option" data-lang="fr">Français</div>
+                    <div class="language-option" data-lang="de">Deutsch</div>
+                </div>
+            </div>
+            -->
+            <button class="md:hidden ml-4 text-black focus:outline-none" id="menuToggle">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </div>
+    </div>
+    
+    <!-- Mobile menu -->
+    <div class="hidden md:hidden bg-white border-t border-gray-200 absolute w-full left-0" id="mobileMenu">
+        <div class="container mx-auto px-4 py-2">
+            <nav class="flex flex-col space-y-3 text-sm uppercase tracking-wider">
+                <a href="home.html" class="px-2 py-1 hover:text-acid-green transition-colors">Home</a>
+              <a href="blog.html" class="px-2 py-1 hover:text-acid-green transition-colors">Articles</a>
+              <a href="exhibition.html" class="px-2 py-1 hover:text-acid-green transition-colors">Projects</a>
+              <a href="about.html" class="px-2 py-1 hover:text-acid-green transition-colors">about us</a>
+              <a href="contact.html" class="px-2 py-1 hover:text-acid-green transition-colors">Contact</a>
+            </nav>
+        </div>
+    </div>
+</header>
+</head>
+<body class="antialiased">
+    <div class="noise"></div>
+    
+    <!-- Header -->
+    <header class="fixed top-0 left-0 w-full z-50 bg-white bg-opacity-90 backdrop-blur-sm border-b border-gray-200">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <!-- Logo img -->
+                <div class="mr-3 w-10 h-10">
+                  <img src="asset/logo_du_collectif.jpeg" alt="Logo Rainbow Pill Collective" class="w-10 h-10 object-cover rounded-none">
+                  <rect width="100%" height="100%" fill="#f5f5f5"/>
+                      <path d="M20,8 C26,8 30,12 30,20 C30,28 26,32 20,32 C14,32 10,28 10,20 C10,12 14,8 20,8 Z" fill="#000"/>
+                      <path d="M20,8 C14,8 10,12 10,20 C10,28 14,32 20,32" fill="none" stroke="#00FF66" stroke-width="2"/>
+                      <path d="M20,32 C26,32 30,28 30,20 C30,12 26,8 20,8" fill="none" stroke="#6600FF" stroke-width="2"/>
+              </img>
+              </div>
+               <h1 class="text-xl font-bold tracking-tighter text-black"> RAINBOW PILL COLLECTIVE </h1>
+          </div>
+            
+            <div class="flex items-center">
+                <nav class="hidden md:flex space-x-6 text-sm uppercase tracking-wider mr-6">
+                  <a href="home.html" class="nav-item px-2 py-1 hover:text-acid-green transition-colors">Home</a>
+                  <a href="blog.html" class="nav-item px-2 py-1 hover:text-acid-green transition-colors">Articles</a>
+                  <a href="exhibition.html" class="nav-item px-2 py-1 hover:text-acid-green transition-colors">Projects</a>
+                  <a href="about.html" class="nav-item px-2 py-1 hover:text-acid-green transition-colors">About us</a>
+                  <a href="contact.html" class="nav-item px-2 py-1 hover:text-acid-green transition-colors">Contact</a>
+                </nav>
+                
+                <div class="language-selector">
+                    <button id="languageToggle" class="flex items-center text-sm uppercase tracking-wider focus:outline-none">
+                        <span id="currentLanguage">EN</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div id="languageOptions" class="language-options hidden">
+                        <div class="language-option" data-lang="en">English</div>
+                        <div class="language-option" data-lang="fr">Français</div>
+                        <div class="language-option" data-lang="de">Deutsch</div>
+                    </div>
+                </div>
+                
+                <button class="md:hidden ml-4 text-black focus:outline-none" id="menuToggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div class="hidden md:hidden bg-white border-t border-gray-200 absolute w-full left-0" id="mobileMenu">
+            <div class="container mx-auto px-4 py-2">
+                <nav class="flex flex-col space-y-3 text-sm uppercase tracking-wider">
+                  <a href="home.html" class="px-2 py-1 hover:text-acid-green transition-colors">Home</a>
+                  <a href="blog.html" class="px-2 py-1 hover:text-acid-green transition-colors">Articles</a>
+                  <a href="exhibition.html" class="px-2 py-1 hover:text-acid-green transition-colors">Projects</a>
+                  <a href="about.html" class="px-2 py-1 hover:text-acid-green transition-colors">About us</a>
+                  <a href="contact.html" class="px-2 py-1 hover:text-acid-green transition-colors">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+<!-- Main Content -->
+<main class="pt-32 pb-20 px-4 md:px-8 max-w-3xl mx-auto font-serif text-gray-900">
+  <article class="space-y-10">
+    <!-- Title & Meta -->
+    <header class="border-b border-gray-300 pb-6">
+      <h1 class="text-5xl font-bold leading-tight mb-4">The Disciplined Body: Tradwives, Right-Wing Body Images, and the Aesthetics of Obedience</h1>
+      <h2 class="text-xl font-light text-gray-700 mb-2">Obedience in Bloom</h2>
+      <p class="text-sm text-gray-500">By D.H, Rainbow Pill Collective · June 2025</p>
+    </header>
+
+    <!-- Feature Image -->
+    <figure class="-mx-4 md:mx-0">
+      <img src="asset/Trad_wife_distortion.png" alt="Tradwife Article Image" class="w-full h-auto object-cover">
+      <figcaption class="text-sm text-gray-500 italic mt-2 text-center">Illustration — The aesthetic politics of submission</figcaption>
+    </figure>
+
+    <!-- Main Text -->
+    <section class="space-y-6 text-lg leading-relaxed">
+      <p class="first-letter:text-5xl first-letter:font-bold first-letter:float-left first-letter:pr-3">
+         <p>
+                Retro dresses, ironed tablecloths, and softly blurred baby bumps: Tradwife influencers package a reactionary image of women in filter-soaked digital aesthetics. On social media, Tradwives stage themselves as devout wives and devoted mothers, thereby referencing conservative ideals of femininity. But behind these visual worlds lies much more than mere romantic nostalgia. The images are ideological: they create a body-related ideal deeply embedded in fascist and neo-authoritarian notions of purity, reproduction, and national duty.
+            </p>
+            
+            <p>
+                Fascist ideologies have long since operated with highly stylized body images that are meant to radiate purity, order, discipline, and willingness to sacrifice. The Tradwife aesthetic adopts this logic by not only idealizing femininity but also shaping it according to strict visual and moral codes - similar to how fascist regimes idealized images of mothers. The flawless housewife is not only romanticized but serves as an expression of a political order in which every bodily gesture has some ideological purpose.
+            </p>
+            
+            <p>
+                Of course, not every influencer who bakes sourdough bread and shares cooking recipes is a fascist. However, the romanticized images related to the female body and femininity portrayed by Tradwife influencers provide broad connection points for authoritarian and oppressive ideologies. Fascist and authoritarian regimes have historically used control over female bodies as a central instrument of domination. Whether in the Nazi cult of motherhood, symbolized by the "Mother's Cross" awarded to mothers of many children, or in today's authoritarian currents abolishing abortion rights: women's bodies are disciplined and instrumentalized. Central here is not only a politics of fertility but also an aesthetics of control, where female bodies are reduced to form, function, and moral legibility.
+            </p>
+            
+            <p>
+                This visual politics corresponds to a fascist logic that codes the female body as a bearer of national and moral purity. The publicly presentable, orderly female body becomes a visual metaphor for social harmony. This is a core narrative of fascist aesthetics, as staged in Leni Riefenstahl's films or Nazi propaganda posters.
+            </p>
+            
+            <p>
+                Female bodies are not only politically regulated but also directly occupied to define masculinity by their means. In Tradwife depictions, this occupation is aesthetically enacted through staging submission as relational harmony, silence as virtue, motherhood as life purpose, and availability as marital duty.
+            </p>
+            
+            <p>
+                The digital Tradwife aesthetic functions, just like images of women in authoritarian contexts, primarily as a disciplinary form: the female body becomes a controlled object and a resource for heteronormative family structures. We can follow this along four lines of bodily control, closely intertwined with authoritarian or fascist gender politics as well as patriarchal power structures: beauty as performance for the man, sexual availability as submission, the body as a nationalist projection surface, and finally, pregnancy as ideological crowning.
+            </p>
+
+            <h2 class="section-title text-2xl font-semibold text-gray-700">Beauty as Performance</h2>
+            
+            <p>
+                Beauty is omnipresent in Tradwife depictions but does not primarily appear as an expression of self-actualization. Rather, it represents a strategically occupied form of submission. It is about pleasing the masculine, personified in the husband. The aesthetic follows a codified script: long hair, discreet but flawless makeup, figure-hugging yet modest clothing. The female body is gently toned, coiffed, and styled, repeatedly confirming male supremacy. The camera often adopts a voyeuristic perspective, degrading the subject to a desirable backdrop. This depiction of beauty-as-submission is exemplified in the Instagram appearances of Tradwives like @ballerinafarm or, in the German-speaking context, @tradwifefactory, who stage their perfect silhouettes while doing housework.
+            </p>
+            
+            <p>
+                The body serves as a projection surface for a conservative social image in which free disposal over the body is not foreseen: the primary goal is to please the husband, as our Tradwife influencers emphasize repeatedly. The man rarely appears in front of the camera but frequently shows up in comments and half-sentences: a dress is worn because the man likes it, the lipstick is supposed to seduce the man, etc. For example, @tradwifefactory explains in an Instagram post titled "I'm not a marriage counselor. But have you tried wearing a nice dress and a nice hairstyle?" in the captions: "As a traditional wife, it is important to me to make myself pretty for my husband because it is a form of respect and affection." She pretties herself for the man, not because she likes it herself: the man as the final authority.
+            </p>
+            
+            <p>
+                The displayed beauty also serves an important communicative function in acquiring new followers. Beauty influencers enjoy great popularity on visually oriented platforms like TikTok or Instagram - beauty attracts. Some successful influencers who now feature Tradwife content originally built their follower base through beauty content. A prominent example is @sarahthereseco, who became known as a beauty influencer but later shifted her focus and now polarizes as a submissive yet trendy Tradwife.
+            </p>
+            
+            <p>
+                The bodily dimension targeted by the Tradwife narratives and images plays a special role in defining gender roles: women are portrayed as the beautiful, weak, caring sex, and biological and physiological differences between the sexes are overemphasized.
+            </p>
+            
+            <p>
+                This elevation of an essentialized, natural gender difference is a classic feature of fascist ideology, where "natural order" serves as legitimation for social inequality. The Tradwife aesthetic adopts this ideology by reducing femininity to a visual ideal that is not questioned but worshipped - exactly in line with fascist body ideals, which understand beauty not as individual development but as a national duty.
+            </p>
+
+            <h2 class="section-title text-2xl font-semibold text-gray-700">Bodily and Sexual Availability</h2>
+            
+            <p>
+                The submission of the Tradwife, however, does not end with appearance. In the logic of Tradwives, the female body is not autonomous but relationally defined by its availability to the husband. Many Tradwives are situated within a Christian-evangelical worldview, in the US often Mormon, such as @ballerinafarm. Sex is rarely explicitly addressed (and when it is, it is codified by platform filters as "seggs"; a code that carries double meanings within the demure context of Tradwives). However, "marital duties," submission, and the necessity of a large family are frequently emphasized.
+            </p>
+            
+            <p>
+                It is always clear that sexual activities are only legitimate in relation to the husband. Free sexual availability or casual sex are taboo or sinful in the world of Tradwives, as determined by the Christian worldview. A popular motif in Tradwife posts is the transformation from the (sexually active but unhappy) feminist to the Tradwife, who has found peace in allegedly idyllic everyday life, submission to the husband, and above all in Christian-conservative ideology.
+            </p>
+            
+            <p>
+                Sexual self-determination or a woman's own desire is thus not foreseen; obedience and devotion are considered the highest forms of femininity. The goal is to subordinate oneself to the biological desire of the husband, which in these narratives is purely hormonally controlled. @tradwifefactory illustrates this in a post about the man's testosterone cycle: in the morning, she explains, levels are highest and it is time for a "nutritious, strengthening breakfast that gives him energy, or other activities 😜." "Seggs" is thus - without being spelled out - naturally integrated into the daily duties of the devoted wife: cooking, cleaning, spreading her legs; all for relationship maintenance. Consent is reinterpreted as a marital obligation, and the female body becomes an object of male disposal - perfectly in line with Christian-biblical subordination rules.
+            </p>
+            
+            <p>
+                Submission plays a prominent role in the Tradwife logic, and hints at kink community practices - although these contradict the image of Christian-modest femininity - are repeatedly discussed in articles and forums. Tradwives are frequently sexualized by male users in forums and comments precisely because they are modest, submissive, and available to their husbands. Moreover, the Tradwife aesthetic has long found its way into the porn industry: videos of women performing household chores and sexually serving their "husbands" can be found on platforms like Pornhub labeled as "tradwife" or "traditional wife" content. Searches for these terms saw strong increases in 2024, underlining the current appeal of submissive demure appearance.
+            </p>
+            
+            <p>
+                Narratives around submission and availability strongly resonate with depictions of masculinity in online communities. In the context of Tradwife ideologies, the traditional images of femininity often come with equally rigid and reactionary notions of masculinity: men are staged as dominant, income-earning, and leading figures embodying strength, determination, and sexual entitlement. These images of masculinity clearly overlap with narratives from the so-called Manosphere, an informal online network of men's rights activists, pick-up artists (PUAs), incels, and other groups dealing with masculinity but frequently spreading misogynistic narratives and violence. Both in the Tradwife context and in the Manosphere, the idea prevails that men have a natural or "earned" right to sex that women must satisfy. The two milieus mutually fertilize and complement each other in their narratives. Particularly in the pick-up artist and "seduction" sector of the Manosphere, it is propagated that women may or must be persuaded, manipulated, or even overwhelmed by certain techniques - a mindset that is not only highly sexist but also legitimizes violence against women by portraying hierarchies between genders as "natural" or "God-given." Women are often depicted as passive objects to be conquered, manipulated, or "cracked." This fosters a culture in which boundary violations, psychological manipulation, or even physical assaults are not only tolerated but celebrated as masculine and successful.
+            </p>
+            
+            <p>
+                These depictions of violent masculinity are the mirror image of submission fantasies in Tradwife romanticism. However, in the Tradwife world, these ideas are ideologically cloaked in a perfidious way because, after all, they serve an alleged noble goal: the obedient submission to the husband for the purpose of procreation, raising children in a traditional-Christian family order, and securing the preservation of the white race.
+            </p>
+
+            <h2 class="section-title text-2xl font-semibold text-gray-700">The Body for the People</h2>
+            
+            <p>
+                Behind the image of the self-sacrificing, available wife lies a deeply ideological project: the female body is turned into a reproductive machine, intended to preserve and sustain the people. The Tradwife movement is infused with pronatalist and ethno-nationalist undertones. These ideologies are most often expressed visually in depictions of white, blonde children with their mothers. But they are also made explicit at times, such as in the "white baby challenge" by Tradwife influencer @wifewithapurpose, or the merging of classic Tradwife content with open support for the German far-right party AfD by influencer @candy.afd. Similarly, Brittany Sellner, wife of the Austrian far-right activist and leader of the "Identitarian Movement," presents herself in this vein. She curates an image of herself as a mother and writer promoting Tradwife values rooted in traditionalism and a staunchly Catholic worldview. At the same time, she openly supports extreme right-wing positions, describing herself as a "Catholic American nationalist" and calling for a complete halt to "mass immigration."
+            </p>
+            
+            <p>
+                In the Tradwife movement, personal desire for children is directly linked to broader political fantasies: in the context of racial preservation, the female body is not seen as an individual subject but as a resource for upholding a supposedly threatened societal order. Pronatalist and ethno-nationalist Tradwives explicitly place their motherhood in the service of "Western values" and the "white race." Again, only few of the Tradwife influencers directly refer to racist, pronatalist or eugenic ideologies. The idealized portrayal of a harmless family idyll, however, is part of a volkisch visual language and strategy that reduces female bodies to political function.
+            </p>
+            
+            <p>
+                Unlike in the era of National Socialism, when these volkisch ideals were tied to nation-states - where the aim was to produce as many German babies as possible - the narratives of Tradwives today operate within a multinational context that is no less racist: The current goal is to produce as many "white" babies as possible. This is often framed within a defensive narrative - it is necessary to resist supposed "foreign infiltration" or even an alleged strategy of the "Great Replacement" (of white populations), and to prevent a "birth collapse" among "white societies." To that end, white, well-situated women are encouraged to reproduce, to follow the "white baby challenge". Tradwife influencers often lead by example, such as @ballerinafarm, who currently has eight children and stages her family life online, as well as her many pregnancies.
+            </p>
+
+            <h2 class="section-title text-2xl font-semibold text-gray-700">Pregnancy as Coronation</h2>
+            
+            <p>
+                In the Tradwife universe, motherhood is not simply one life path among many, but the ultimate destiny of womanhood and her personal bodily contribution to the preservation of the race. Pregnancy, accordingly, is not just celebrated but sacred: the female body becomes an altar, the fetus a divine project, and, not least, a volkisch responsibility.
+            </p>
+            
+            <p>
+                The profiles of Tradwife influencers are filled with images and videos of baby bumps, often shrouded in flowing garments and bathed in golden backlight. This romantic aesthetic places particular emphasis on biologistic notions of femininity, which are seen in Tradwife logic as the natural striving of the female body. At the same time, the glorification of pregnancy becomes a powerful bastion against female self-determination: anyone who insists on abortion rights in the face of these magical depictions must be heartless!
+            </p>
+            
+            <p>
+                Anti-abortion activists like @sarahthereseco, herself a mother of five, who combines her traditional view of motherhood and family with a fashion-conscious aesthetic and occasionally posts images of her bare pregnant belly on Instagram, link the romanticized portrayal of motherhood with militant anti-choice activism. The rejection of abortion is justified not only on religious or moral grounds, but also aesthetically: the female body is declared a sacred space over which autonomous decision-making is no longer permitted. Pregnancy here is not merely a bodily experience, but a volkisch and religious mission, a holy duty of the female body.
+            </p>
+            
+            <p>
+                Questions around abortion rights are not framed as political or moral issues, but as emotionally charged battles. Tradwife influencers present their rejection of abortion as an expression of deep concern for unborn life, for "lost" femininity, for a society they see as decadent. But this performance of compassion is deceptive: it becomes a moral stage on which abortion is not only problematized but pathologized. Women who choose not to carry a pregnancy to term are no longer regarded as autonomous agents, but as lost beings in need of rescue, or even as selfish feminists who deny their "true purpose." Concern for life and love for the unborn child become facades for control and weapons against female autonomy. Beneath the veil of gentle words lies a clear message: the body does not belong to the woman, but to the child, the man, God, or the people.
+            </p>
+
+            <h2 class="section-title text-2xl font-semibold text-gray-700">The Body as Stage of Order</h2>
+            
+            <p>
+                Ultimately, the female body remains both a central motif and the battleground of a complex ideological drama: it is to be beautiful, available, fertile - and always controllable. Every curl, every gesture, every pose is part of a script that stages discipline, availability, and obedience in seemingly natural elegance.
+            </p>
+            
+            <p>
+                These visual worlds suggest intimacy but are in fact the opposite: they are propaganda, making fascist and authoritarian narratives socially acceptable. The female body is not allowed simply to exist. Instead, it must serve the restoration of a long-lost order, embodying the idea of woman as the still point in a world perceived to be coming apart. This backward projection onto a mythical order is a central motif of fascist aesthetics: it draws on images of origin, purity, and natural hierarchy. Tradwife aesthetics tap directly into this myth. The supposedly harmonious body becomes a projection surface for authoritarian fantasies of social control, in which any deviation is perceived as a threat.
+            </p>
+            
+            <p>
+                This is not merely about gender roles, but about body politics: those who refuse to participate in this aesthetic - through queer identity, feminist critique, or simply by living out ambivalence - are not merely ignored, but actively opposed. The Tradwife logic knows no gray areas. The body must obey. In this sense, the Tradwife is not a relic of the past, but a symptom of the present: in the midst of digital self-presentation and social insecurity, she offers order through aesthetics, meaning through submission, identity through performance.
+            </p>
+            
+            <p>
+                This performance is compatible with the visual politics of authoritarian movements. Particularly in the context of the Alt-Right and related ideologies, the Tradwife figure becomes a cultural projection of volkisch longing: the layers of bodily control are not isolated lifestyle choices, but interwoven elements of an authoritarian and fascist body politics. Beauty becomes a duty in the service of male dominance, sexual availability becomes proof of marital submission, motherhood a resource for national reproduction, pregnancy a sacred mission against "population replacement."
+            </p>
+            
+            <p>
+                This aesthetic operates according to the fascist principle of totality: the female body is entirely functionalized, every facet, from hairstyle to uterus, serves the maintenance of an ideological order. The Tradwife is thus not merely part of a regressive trend but a figure in which gender politics, biopolitics, and racist ideology converge into a unified aesthetic image; one that constitutes a visually staged culture war. Within this logic, the female body is fully politicized: it must please, serve, give birth in the name of an imagined ethnic and moral purity. The Tradwife aesthetic is therefore not a harmless retro phenomenon, but the visual surface of a right-wing culture war that transforms women's bodies into volkisch symbols.
+            </p>
+        </div>
+       
+      <!-- Remainder of article inserted here -->
+      <div class="article-content text-gray-700">
+        ...
+      </div>
+
+    </section>
+  </article>
+</main>
+
+  
+  <!-- Footer -->
+  <footer class="py-12 px-4 md:px-8 bg-white border-t border-gray-200">
+    <div class="container mx-auto max-w-6xl">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+            <div class="mb-6 md:mb-0">
+                <div class="flex items-center">
+                    <!-- Logo in footer -->
+                    <div class="mr-3 w-8 h-8">
+                        <img src="asset/logo_du_collectif.jpeg" alt="Logo Rainbow Pill Collective" class="w-10 h-10 object-cover rounded-none">
+                        <rect width="100%" height="100%" fill="#f5f5f5"/>
+                            <path d="M20,8 C26,8 30,12 30,20 C30,28 26,32 20,32 C14,32 10,28 10,20 C10,12 14,8 20,8 Z" fill="#000"/>
+                            <path d="M20,8 C14,8 10,12 10,20 C10,28 14,32 20,32" fill="none" stroke="#00FF66" stroke-width="2"/>
+                            <path d="M20,32 C26,32 30,28 30,20 C30,12 26,8 20,8" fill="none" stroke="#6600FF" stroke-width="2"/>
+                        </img>
+                    </div>
+                    
+                    <h1 class="text-xl font-bold tracking-tighter">
+                        <span class="glitch" data-text="RAINBOW">RAINBOW</span>
+                        <span class="glitch" data-text="PILL">PILL</span>
+                        <span class="glitch" data-text="COLLECTIVE">COLLECTIVE</span>
+                    </h1>
+                </div>
+            </div>
+            
+            <nav class="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm uppercase tracking-wider mb-6 md:mb-0">
+                <a href="home.html" class="hover:text-acid-green transition-colors">Home</a>
+                <a href="blog.html" class="hover:text-acid-green transition-colors">Articles</a>
+                <a href="exhibition.html" class="hover:text-acid-green transition-colors">Projects</a>
+                <a href="about.html" class="hover:text-acid-green transition-colors">About us</a>
+                <a href="contact.html" class="hover:text-acid-green transition-colors">Contact</a>
+                </nav>
+            
+            <div class="text-sm text-gray-600">
+                © 2025 Rainbow Pill Collective
+            </div>
+        </div>
+        
+        <div class="mt-8 pt-8 border-t border-gray-200 flex flex-col md:flex-row justify-between items-center">
+            <div class="flex items-center mb-4 md:mb-0">
+                <a href="https://www.instagram.com/rainbow.pill.collective/" target="_blank" class="text-gray-600 hover:text-magenta transition-colors mr-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                    </svg>
+                </a>
+                <a href="/cdn-cgi/l/email-protection#2d5f4c44434f425a035d4441416d5d425e594842034e4240" class="text-gray-600 hover:text-acid-green transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                </a>
+            </div>
+            
+            <div class="text-xs text-gray-500">
+                <a href="#" class="hover:underline mr-4">Privacy Policy</a>
+                <a href="#" class="hover:underline">Terms of Use</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    // Mobile menu toggle
+    const menuToggle = document.getElementById('menuToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+    
+    menuToggle.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+    
+    // Language selector
+    const languageToggle = document.getElementById('languageToggle');
+    const languageOptions = document.getElementById('languageOptions');
+    const currentLanguage = document.getElementById('currentLanguage');
+    const languageOptionElements = document.querySelectorAll('.language-option');
+    
+    languageToggle.addEventListener('click', () => {
+        languageOptions.classList.toggle('hidden');
+    });
+    
+    languageOptionElements.forEach(option => {
+        option.addEventListener('click', () => {
+            currentLanguage.textContent = option.dataset.lang.toUpperCase();
+            languageOptions.classList.add('hidden');
+        });
+    });
+    
+    // Close language dropdown when clicking outside
+    document.addEventListener('click', (event) => {
+        if (!languageToggle.contains(event.target) && !languageOptions.contains(event.target)) {
+            languageOptions.classList.add('hidden');
+        }
+    });
+    
+    // Gallery and Lightbox
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImage = document.getElementById('lightboxImage');
+    const lightboxClose = document.getElementById('lightboxClose');
+    const prevButton = document.getElementById('prevButton');
+    const nextButton = document.getElementById('nextButton');
+    
+    let currentIndex = 0;
+    
+    const galleryImages = [
+        "asset/expo_boite_ouverte.jpeg?ref_type=heads",
+        "asset/People_interacting.jpg?ref_type=heads",
+        "asset/Manosphere_pill.jpeg?ref_type=heads",
+        "asset/Expo_boite_fermé.jpeg?ref_type=heads"
+    ];
+    
+    galleryItems.forEach(item => {
+        item.addEventListener('click', () => {
+            currentIndex = parseInt(item.dataset.index);
+            lightboxImage.src = galleryImages[currentIndex];
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+    });
+    
+    lightboxClose.addEventListener('click', () => {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = '';
+    });
+    
+    prevButton.addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+        lightboxImage.src = galleryImages[currentIndex];
+    });
+    
+    nextButton.addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % galleryImages.length;
+        lightboxImage.src = galleryImages[currentIndex];
+    });
+    
+    // Close lightbox with escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+ 

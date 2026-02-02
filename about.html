@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - RAINBOW PILL COLLECTIVE</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Base styles */
+        :root {
+            --acid-green: #00FF66;
+            --deep-violet: #6600FF;
+            --magenta: #FF00FF;
+            --black: #000000;
+            --white: #FFFFFF;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--black);
+            line-height: 1.5;
+            overflow-x: hidden;
+        }
+        
+        .noise {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 250 250' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            opacity: 0.05;
+            pointer-events: none;
+            z-index: 1000;
+        }
+        
+        .mono {
+            font-family: 'Space Mono', monospace;
+        }
+        
+        /* Glitch effect */
+        .glitch {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .glitch::before,
+        .glitch::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.8;
+        }
+        
+        .glitch::before {
+            left: 2px;
+            text-shadow: -1px 0 var(--acid-green);
+            clip: rect(44px, 450px, 56px, 0);
+            animation: glitch-anim 5s infinite linear alternate-reverse;
+        }
+        
+        .glitch::after {
+            left: -2px;
+            text-shadow: -1px 0 var(--magenta);
+            clip: rect(44px, 450px, 56px, 0);
+            animation: glitch-anim2 5s infinite linear alternate-reverse;
+        }
+        
+        @keyframes glitch-anim {
+            0% {
+                clip: rect(42px, 9999px, 44px, 0);
+            }
+            5% {
+                clip: rect(12px, 9999px, 59px, 0);
+            }
+            10% {
+                clip: rect(48px, 9999px, 29px, 0);
+            }
+            15.0% {
+                clip: rect(42px, 9999px, 73px, 0);
+            }
+            20% {
+                clip: rect(63px, 9999px, 27px, 0);
+            }
+            25% {
+                clip: rect(34px, 9999px, 55px, 0);
+            }
+            30.0% {
+                clip: rect(86px, 9999px, 73px, 0);
+            }
+            35% {
+                clip: rect(20px, 9999px, 20px, 0);
+            }
+            40% {
+                clip: rect(26px, 9999px, 60px, 0);
+            }
+            45% {
+                clip: rect(25px, 9999px, 66px, 0);
+            }
+            50% {
+                clip: rect(57px, 9999px, 98px, 0);
+            }
+            55.0% {
+                clip: rect(5px, 9999px, 46px, 0);
+            }
+            60.0% {
+                clip: rect(82px, 9999px, 31px, 0);
+            }
+            65% {
+                clip: rect(54px, 9999px, 27px, 0);
+            }
+            70% {
+                clip: rect(28px, 9999px, 99px, 0);
+            }
+            75% {
+                clip: rect(45px, 9999px, 69px, 0);
+            }
+            80% {
+                clip: rect(23px, 9999px, 85px, 0);
+            }
+            85.0% {
+                clip: rect(54px, 9999px, 84px, 0);
+            }
+            90% {
+                clip: rect(45px, 9999px, 47px, 0);
+            }
+            95% {
+                clip: rect(37px, 9999px, 20px, 0);
+            }
+            100% {
+                clip: rect(4px, 9999px, 91px, 0);
+            }
+        }
+        
+        @keyframes glitch-anim2 {
+            0% {
+                clip: rect(65px, 9999px, 100px, 0);
+            }
+            5% {
+                clip: rect(52px, 9999px, 74px, 0);
+            }
+            10% {
+                clip: rect(79px, 9999px, 85px, 0);
+            }
+            15.0% {
+                clip: rect(75px, 9999px, 5px, 0);
+            }
+            20% {
+                clip: rect(67px, 9999px, 61px, 0);
+            }
+            25% {
+                clip: rect(14px, 9999px, 79px, 0);
+            }
+            30.0% {
+                clip: rect(1px, 9999px, 66px, 0);
+            }
+            35% {
+                clip: rect(86px, 9999px, 30px, 0);
+            }
+            40% {
+                clip: rect(23px, 9999px, 98px, 0);
+            }
+            45% {
+                clip: rect(85px, 9999px, 72px, 0);
+            }
+            50% {
+                clip: rect(71px, 9999px, 75px, 0);
+            }
+            55.0% {
+                clip: rect(2px, 9999px, 48px, 0);
+            }
+            60.0% {
+                clip: rect(30px, 9999px, 16px, 0);
+            }
+            65% {
+                clip: rect(59px, 9999px, 50px, 0);
+            }
+            70% {
+                clip: rect(41px, 9999px, 62px, 0);
+            }
+            75% {
+                clip: rect(2px, 9999px, 82px, 0);
+            }
+            80% {
+                clip: rect(47px, 9999px, 73px, 0);
+            }
+            85.0% {
+                clip: rect(3px, 9999px, 27px, 0);
+            }
+            90% {
+                clip: rect(26px, 9999px, 55px, 0);
+            }
+            95% {
+                clip: rect(42px, 9999px, 97px, 0);
+            }
+            100% {
+                clip: rect(38px, 9999px, 49px, 0);
+            }
+        }
+        
+        /* Custom utility classes */
+        .text-acid-green {
+            color: var(--acid-green);
+        }
+        
+        .text-deep-violet {
+            color: var(--deep-violet);
+        }
+        
+        .text-magenta {
+            color: var(--magenta);
+        }
+        
+        .bg-acid-green {
+            background-color: var(--acid-green);
+        }
+        
+        .bg-deep-violet {
+            background-color: var(--deep-violet);
+        }
+        
+        .bg-magenta {
+            background-color: var(--magenta);
+        }
+        
+        /* Language selector */
+        .language-selector {
+            position: relative;
+        }
+        
+        .language-options {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background-color: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.25rem;
+            padding: 0.5rem 0;
+            min-width: 120px;
+            z-index: 50;
+        }
+        
+        .language-option {
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+        }
+        
+        .language-option:hover {
+            background-color: #f3f4f6;
+        }
+        
+        /* Blog cards */
+        .about
+        -card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .about
+        -card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .about
+        -card-image {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .about
+        -card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .about
+        -card:hover .about
+        -card-image img {
+            transform: scale(1.05);
+        }
+        
+        /* Category pills */
+        .category-pill {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        .category-pill.tech {
+            background-color: rgba(0, 255, 102, 0.1);
+            color: var(--acid-green);
+        }
+        
+        .category-pill.philosophy {
+            background-color: rgba(102, 0, 255, 0.1);
+            color: var(--deep-violet);
+        }
+        
+        .category-pill.feminism {
+            background-color: rgba(255, 0, 255, 0.1);
+            color: var(--magenta);
+        }
+        
+        .category-pill.society {
+            background-color: rgba(0, 0, 0, 0.1);
+            color: var(--black);
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <div class="noise"></div>
+    
+    <!-- Header -->
+    <header class="fixed top-0 left-0 w-full z-50 bg-white bg-opacity-90 backdrop-blur-sm border-b border-gray-200">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <!-- Logo SVG -->
+                <div class="mr-3 w-10 h-10">
+                    <img src="asset/logo_du_collectif.jpeg" alt="Rainbow Pill Collective Photo" class="w-full h-auto object-cover" />
+                    <rect width="100%" height="100%" fill="#f5f5f5"/>
+                        <path d="M20,8 C26,8 30,12 30,20 C30,28 26,32 20,32 C14,32 10,28 10,20 C10,12 14,8 20,8 Z" fill="#000"/>
+                        <path d="M20,8 C14,8 10,12 10,20 C10,28 14,32 20,32" fill="none" stroke="#00FF66" stroke-width="2"/>
+                        <path d="M20,32 C26,32 30,28 30,20 C30,12 26,8 20,8" fill="none" stroke="#6600FF" stroke-width="2"/>
+                </img>
+                </div>
+                
+                <h1 class="text-xl md:text-2xl font-bold tracking-tighter">
+                    <a href="home.html">
+                        <span class="glitch" data-text="RAINBOW">RAINBOW</span>
+                        <span class="glitch" data-text="PILL">PILL</span>
+                        <span class="glitch" data-text="COLLECTIVE">COLLECTIVE</span>
+                    </a>
+                </h1>
+            </div>
+            
+            <div class="flex items-center">
+                <nav class="hidden md:flex space-x-6 text-sm uppercase tracking-wider mr-6">
+                    <a href="home.html" class="nav-item px-2 py-1 hover:text-acid-green transition-colors">Home</a>
+                    <a href="blog.html" class="nav-item px-2 py-1 hover:text-acid-green transition-colors">Articles</a>
+                    <a href="exhibition.html" class="nav-item px-2 py-1 hover:text-acid-green transition-colors">Projects</a>
+                    <a href="about.html" class="nav-item px-2 py-1 hover:text-acid-green transition-colors">About us</a>
+                    <a href="contact.html" class="nav-item px-2 py-1 hover:text-acid-green transition-colors">Contact</a>
+                </nav>
+                
+                <div class="language-selector">
+                    <button id="languageToggle" class="flex items-center text-sm uppercase tracking-wider focus:outline-none">
+                        <span id="currentLanguage">EN</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div id="languageOptions" class="language-options hidden">
+                        <div class="language-option" data-lang="en">English</div>
+                        <div class="language-option" data-lang="fr">Français</div>
+                        <div class="language-option" data-lang="de">Deutsch</div>
+                    </div>
+                </div>
+                
+                <button class="md:hidden ml-4 text-black focus:outline-none" id="menuToggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div class="hidden md:hidden bg-white border-t border-gray-200 absolute w-full left-0" id="mobileMenu">
+            <div class="container mx-auto px-4 py-2">
+                <nav class="flex flex-col space-y-3 text-sm uppercase tracking-wider">
+                    <a href="home.html" class="px-2 py-1 hover:text-acid-green transition-colors">Home</a>
+                  <a href="about
+                  .html" class="px-2 py-1 hover:text-acid-green transition-colors">Articles</a>
+                  <a href="exhibition.html" class="px-2 py-1 hover:text-acid-green transition-colors">Projects</a>
+                  <a href="about.html" class="px-2 py-1 hover:text-acid-green transition-colors">About us</a>
+                  <a href="contact.html" class="px-2 py-1 hover:text-acid-green transition-colors">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+  <!-- Main Content -->
+  <main class="pt-32 pb-20 px-4 md:px-8">
+    <section class="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+      <div>
+        <h2 class="text-4xl font-bold mb-6">Who We Are</h2>
+        <p class="mb-6 text-lg">
+          We are a feminist collective of tech people, artists, and researchers working together to create innovative, inclusive, and thought-provoking projects that challenge societal norms and foster dialogue.
+        </p>
+        <p class="mb-6 text-lg">
+          Through a fusion of technology, art, and critical thought, we explore the intersectionality of identity, technology, and culture. Our collective work strives to dismantle harmful systems and build creative, critical, and inclusive spaces.
+        </p>
+
+        <h3 class="text-2xl font-semibold mt-10 mb-4">The Rainbow Pill</h3>
+        <p class="mb-4 text-lg">
+          The “Rainbow Pill” counters the “Red Pill” narrative popular in the manosphere. While the Red Pill promotes a reductive awakening to alleged gender truths rooted in misogyny, the Rainbow Pill invites a multifaceted, inclusive awakening.
+        </p>
+        <p class="text-lg">
+          It recognizes that truth is shaped by diverse experiences, especially from marginalized communities. The Rainbow Pill challenges patriarchal ideologies and promotes empathy, awareness, and inclusivity.
+        </p>
+      </div>
+
+      <div class="rounded-lg shadow-lg overflow-hidden">
+        <img src="asset/logo_du_collectif.jpeg" alt="Rainbow Pill Collective Photo" class="w-full h-auto object-cover" />
+      </div>
+    </section>
+  </main>
+
+   <!-- Footer -->
+   <footer class="py-12 px-4 md:px-8 bg-white border-t border-gray-200">
+    <div class="container mx-auto max-w-6xl">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+            <div class="mb-6 md:mb-0">
+                <div class="flex items-center">
+                    <!-- Logo in footer -->
+                    <div class="mr-3 w-8 h-8">
+                        <img src="asset/logo_du_collectif.jpeg" alt="Logo Rainbow Pill Collective" class="w-10 h-10 object-cover rounded-none">
+                        <rect width="100%" height="100%" fill="#f5f5f5"/>
+                            <path d="M20,8 C26,8 30,12 30,20 C30,28 26,32 20,32 C14,32 10,28 10,20 C10,12 14,8 20,8 Z" fill="#000"/>
+                            <path d="M20,8 C14,8 10,12 10,20 C10,28 14,32 20,32" fill="none" stroke="#00FF66" stroke-width="2"/>
+                            <path d="M20,32 C26,32 30,28 30,20 C30,12 26,8 20,8" fill="none" stroke="#6600FF" stroke-width="2"/>
+                        </img>
+                    </div>
+                <h1 class="text-xl font-bold tracking-tighter text-black"> RAINBOW PILL COLLECTIVE </h1>
+                </div>
+            </div>
+            
+            <nav class="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm uppercase tracking-wider mb-6 md:mb-0">
+                <a href="home.html" class="hover:text-acid-green transition-colors">Home</a>
+                <a href="blog.html" class="hover:text-acid-green transition-colors">Articles</a>
+                <a href="exhibition.html" class="hover:text-acid-green transition-colors">Projects</a>
+                <a href="about.html" class="hover:text-acid-green transition-colors">About us</a>
+                <a href="contact.html" class="hover:text-acid-green transition-colors">Contact</a>
+                </nav>
+            
+            <div class="text-sm text-gray-600">
+                © 2025 Rainbow Pill Collective
+            </div>
+        </div>
+        
+        <div class="mt-8 pt-8 border-t border-gray-200 flex flex-col md:flex-row justify-between items-center">
+            <div class="flex items-center mb-4 md:mb-0">
+                <a href="https://www.instagram.com/rainbow.pill.collective/" target="_blank" class="text-gray-600 hover:text-magenta transition-colors mr-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                    </svg>
+                </a>
+                <a href="/cdn-cgi/l/email-protection#2755464e4945485009574e4b4b675748545342480944484a" class="text-gray-600 hover:text-acid-green transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                </a>
+            </div>
+            
+            <div class="text-xs text-gray-500">
+                <a href="#" class="hover:underline mr-4">Privacy Policy</a>
+                <a href="#" class="hover:underline">Terms of Use</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    // Mobile menu toggle
+    const menuToggle = document.getElementById('menuToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+    
+    menuToggle.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+    
+    // Language selector
+    const languageToggle = document.getElementById('languageToggle');
+    const languageOptions = document.getElementById('languageOptions');
+    const currentLanguage = document.getElementById('currentLanguage');
+    const languageOptionElements = document.querySelectorAll('.language-option');
+    
+    languageToggle.addEventListener('click', () => {
+        languageOptions.classList.toggle('hidden');
+    });
+    
+    languageOptionElements.forEach(option => {
+        option.addEventListener('click', () => {
+            currentLanguage.textContent = option.dataset.lang.toUpperCase();
+            languageOptions.classList.add('hidden');
+        });
+    });
+    
+    // Close language dropdown when clicking outside
+    document.addEventListener('click', (event) => {
+        if (!languageToggle.contains(event.target) && !languageOptions.contains(event.target)) {
+            languageOptions.classList.add('hidden');
+        }
+    });
+    
+    // Gallery and Lightbox
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImage = document.getElementById('lightboxImage');
+    const lightboxClose = document.getElementById('lightboxClose');
+    const prevButton = document.getElementById('prevButton');
+    const nextButton = document.getElementById('nextButton');
+    
+    let currentIndex = 0;
+    
+    const galleryImages = [
+        "asset/ expo_boite_ouverte.jpeg?ref_type=heads",
+        "asset/ People_interacting.jpg?ref_type=heads",
+        "asset/ Manosphere_pill.jpeg?ref_type=heads",
+        "asset/ Expo_boite_fermé.jpeg?ref_type=heads"
+    ];
+    
+    galleryItems.forEach(item => {
+        item.addEventListener('click', () => {
+            currentIndex = parseInt(item.dataset.index);
+            lightboxImage.src = galleryImages[currentIndex];
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+    });
+    
+    lightboxClose.addEventListener('click', () => {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = '';
+    });
+    
+    prevButton.addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+        lightboxImage.src = galleryImages[currentIndex];
+    });
+    
+    nextButton.addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % galleryImages.length;
+        lightboxImage.src = galleryImages[currentIndex];
+    });
+    
+    // Close lightbox with escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    });
