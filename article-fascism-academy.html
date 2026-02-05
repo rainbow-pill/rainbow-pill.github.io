@@ -34,6 +34,38 @@
     .text-magenta { color: var(--magenta); }
     .footnote { font-size: 0.85rem; color: #666; border-left: 3px solid var(--acid-green); padding-left: 1rem; margin: 1rem 0; }
     .footnote-ref { color: var(--deep-violet); font-size: 0.75rem; vertical-align: super; }
+
+    /* Style for reference numbers in text */
+    sup {
+      color: var(--deep-violet);
+      font-weight: 600;
+      font-size: 0.7em;
+      margin-left: 2px;
+      margin-right: 1px;
+      line-height: 0;
+      position: relative;
+      vertical-align: baseline;
+      top: -0.5em;
+    }
+
+    sup a {
+      color: var(--deep-violet);
+      text-decoration: none;
+      transition: color 0.2s ease;
+      padding: 1px 3px;
+      border-radius: 3px;
+    }
+
+    sup a:hover {
+      color: var(--magenta);
+      background-color: rgba(102, 0, 255, 0.05);
+    }
+
+    /* Style for notes section */
+    .notes-section p {
+      scroll-margin-top: 100px;
+    }
+
     blockquote { border-left: 4px solid var(--magenta); padding-left: 1.5rem; font-style: italic; color: #444; margin: 1.5rem 0; }
     h2 { margin-top: 2.5rem; margin-bottom: 1rem; }
     h3 { margin-top: 2rem; margin-bottom: 0.75rem; }
@@ -88,9 +120,9 @@
           "I no longer believe that freedom and democracy are compatible"
         </blockquote>
 
-        <p>This sentence is not taken from a political science textbook on authoritarian regimes. It was written by Peter Thiel, in an essay published in 2009 in the libertarian journal <em>Cato Unbound</em><sup>[1]</sup>. Sixteen years later, its author was welcomed in Paris, within one of the most prestigious institutions of the French Republic.</p>
+        <p>This sentence is not taken from a political science textbook on authoritarian regimes. It was written by Peter Thiel, in an essay published in 2009 in the libertarian journal <em>Cato Unbound</em><sup><a href="#note-1">[1]</a></sup>. Sixteen years later, its author was welcomed in Paris, within one of the most prestigious institutions of the French Republic.</p>
 
-        <p>On January 26, 2026, Peter Thiel spoke behind closed doors at the Academy of Moral and Political Sciences<sup>[2]</sup>, invited by the philosophy section. The session, kept secret until the last moment, was officially about "technology and the future of the West." According to testimonies gathered, the billionaire reportedly developed an eschatological vision mixing references to the Antichrist, criticism of democratic "decadence," and praise for technological disruption as an instrument of power.</p>
+        <p>On January 26, 2026, Peter Thiel spoke behind closed doors at the Academy of Moral and Political Sciences<sup><a href="#note-2">[2]</a></sup>, invited by the philosophy section. The session, kept secret until the last moment, was officially about "technology and the future of the West." According to testimonies gathered, the billionaire reportedly developed an eschatological vision mixing references to the Antichrist, criticism of democratic "decadence," and praise for technological disruption as an instrument of power.</p>
 
         <p>Outside, about a hundred protesters brandished a banner reading "Palantir-toi" (a French pun meaning "Get out, Palantir") — a sardonic wordplay referring to the mass surveillance company co-founded by Thiel. The Association of Philosophy Teachers in Public Education (APPEP) had published a statement denouncing this invitation, recalling the openly anti-democratic positions of the businessman.</p>
 
@@ -98,35 +130,35 @@
 
         <h2 class="text-2xl font-bold text-deep-violet">Portrait of an Architect of Technofascism</h2>
 
-        <p>Peter Thiel, 58, is not just another Silicon Valley entrepreneur. Co-founder of PayPal alongside Elon Musk, first outside investor in Facebook (where he sat on the board until 2022), he is above all the creator of Palantir Technologies<sup>[3]</sup> — a company whose name, borrowed from the seeing-stones in <em>The Lord of the Rings</em>, perfectly summarizes its ambition: to see everything, know everything, control everything.</p>
+        <p>Peter Thiel, 58, is not just another Silicon Valley entrepreneur. Co-founder of PayPal alongside Elon Musk, first outside investor in Facebook (where he sat on the board until 2022), he is above all the creator of Palantir Technologies<sup><a href="#note-3">[3]</a></sup> — a company whose name, borrowed from the seeing-stones in <em>The Lord of the Rings</em>, perfectly summarizes its ambition: to see everything, know everything, control everything.</p>
 
         <p>In his 2009 essay, Thiel did not merely express doubts about democracy. He explicitly pointed out what he considered the causes of its dysfunction:</p>
 
         <blockquote>
-          "Since 1920, the vast increase in welfare beneficiaries and the extension of the franchise to women — two constituencies that are notoriously tough for libertarians — have rendered the notion of 'capitalist democracy' into an oxymoron."<sup>[4]</sup>
+          "Since 1920, the vast increase in welfare beneficiaries and the extension of the franchise to women — two constituencies that are notoriously tough for libertarians — have rendered the notion of 'capitalist democracy' into an oxymoron."<sup><a href="#note-4">[4]</a></sup>
         </blockquote>
 
         <p>Women's right to vote as an obstacle to progress. Welfare as a hindrance to freedom. This gives a measure of the scope of the political project.</p>
 
-        <p>But Thiel does not merely theorize. He acts. In 2016, he funded Donald Trump's campaign and became one of his advisors. In 2022, he invested $15 million in J.D. Vance's Senate campaign — now Vice President of the United States<sup>[5]</sup>. He maintains close ties with Curtis Yarvin, a neoreactionary ideologue who advocates for the abolition of the American Constitution in favor of "techno-authoritarian city-states" run by all-powerful CEOs<sup>[6]</sup>.</p>
+        <p>But Thiel does not merely theorize. He acts. In 2016, he funded Donald Trump's campaign and became one of his advisors. In 2022, he invested $15 million in J.D. Vance's Senate campaign — now Vice President of the United States<sup><a href="#note-5">[5]</a></sup>. He maintains close ties with Curtis Yarvin, a neoreactionary ideologue who advocates for the abolition of the American Constitution in favor of "techno-authoritarian city-states" run by all-powerful CEOs<sup><a href="#note-6">[6]</a></sup>.</p>
 
         <h2 class="text-2xl font-bold text-deep-violet">Palantir: The Machine for Surveillance and Deportation</h2>
 
-        <p>Palantir Technologies, co-founded by Thiel in 2003 with financial support from In-Q-Tel — the CIA's investment fund<sup>[7]</sup> — develops massive data analysis software used by intelligence services and law enforcement agencies around the world.</p>
+        <p>Palantir Technologies, co-founded by Thiel in 2003 with financial support from In-Q-Tel — the CIA's investment fund<sup><a href="#note-7">[7]</a></sup> — develops massive data analysis software used by intelligence services and law enforcement agencies around the world.</p>
 
-        <p>In the United States, Palantir has become the central tool of the Trump administration's immigration policy. In April 2025, ICE<sup>[8]</sup> signed a $30 million contract with the company to develop "ImmigrationOS" — an artificial intelligence platform designed to "identify, track, and deport" immigrants<sup>[9]</sup>.</p>
+        <p>In the United States, Palantir has become the central tool of the Trump administration's immigration policy. In April 2025, ICE<sup><a href="#note-8">[8]</a></sup> signed a $30 million contract with the company to develop "ImmigrationOS" — an artificial intelligence platform designed to "identify, track, and deport" immigrants<sup><a href="#note-9">[9]</a></sup>.</p>
 
-        <p>The system aggregates data from multiple government sources: tax files, Social Security databases, license plate records, air travel histories. It allows agents to approve raids, generate legal documents, and organize deportation flights — all from a single interface<sup>[10]</sup>.</p>
+        <p>The system aggregates data from multiple government sources: tax files, Social Security databases, license plate records, air travel histories. It allows agents to approve raids, generate legal documents, and organize deportation flights — all from a single interface<sup><a href="#note-10">[10]</a></sup>.</p>
 
-        <p>Thirteen former Palantir employees signed an open letter in May 2025, titled "The Scouring of the Shire" (a reference to <em>The Lord of the Rings</em>), denouncing the dismantling of the company's ethical safeguards<sup>[11]</sup>:</p>
+        <p>Thirteen former Palantir employees signed an open letter in May 2025, titled "The Scouring of the Shire" (a reference to <em>The Lord of the Rings</em>), denouncing the dismantling of the company's ethical safeguards<sup><a href="#note-11">[11]</a></sup>:</p>
 
         <blockquote>
           "Companies are bowing to the Trump administration, suppressing dissent, and aligning with its xenophobic, sexist, and oligarchic agenda."
         </blockquote>
 
-        <p>In France, the DGSI<sup>[12]</sup> has been using Palantir tools since 2016, initially deployed urgently after the November 13, 2015 attacks. In December 2025, the contract was renewed for three more years<sup>[13]</sup>. The software, called OTDH (Heterogeneous Data Processing Tool), constitutes according to experts "the backbone" of French domestic intelligence's analytical capabilities.</p>
+        <p>In France, the DGSI<sup><a href="#note-12">[12]</a></sup> has been using Palantir tools since 2016, initially deployed urgently after the November 13, 2015 attacks. In December 2025, the contract was renewed for three more years<sup><a href="#note-13">[13]</a></sup>. The software, called OTDH (Heterogeneous Data Processing Tool), constitutes according to experts "the backbone" of French domestic intelligence's analytical capabilities.</p>
 
-        <p>The promise of a "sovereign" French tool to replace Palantir, repeated since 2018 by successive governments, remains unfulfilled. As the specialized media OpexNews analyzes: "Sovereignty is not a slogan, it's an industrial trajectory, long, costly, and often ungrateful. As long as it remains presented as a 'transition' without a clear timeline, the temporary will continue to be very permanent."<sup>[14]</sup></p>
+        <p>The promise of a "sovereign" French tool to replace Palantir, repeated since 2018 by successive governments, remains unfulfilled. As the specialized media OpexNews analyzes: "Sovereignty is not a slogan, it's an industrial trajectory, long, costly, and often ungrateful. As long as it remains presented as a 'transition' without a clear timeline, the temporary will continue to be very permanent."<sup><a href="#note-14">[14]</a></sup></p>
 
         <h2 class="text-2xl font-bold text-deep-violet">The French Architects of Conquest: Media, Money, and Politics</h2>
 
@@ -134,31 +166,31 @@
 
         <h3 class="text-xl font-bold">The Bolloré Empire: Manufacturing Consent</h3>
 
-        <p>Vincent Bolloré<sup>[15]</sup>, France's 11th richest person, has methodically built a media empire in service of an ultraconservative vision. CNews, Europe 1, the Journal du Dimanche, Canal+: these media outlets daily broadcast a flow of information oriented toward the obsessions of the far right — immigration, insecurity, "wokism," Islam.</p>
+        <p>Vincent Bolloré<sup><a href="#note-15">[15]</a></sup>, France's 11th richest person, has methodically built a media empire in service of an ultraconservative vision. CNews, Europe 1, the Journal du Dimanche, Canal+: these media outlets daily broadcast a flow of information oriented toward the obsessions of the far right — immigration, insecurity, "wokism," Islam.</p>
 
-        <p>The figures documented by Reporters Without Borders in November 2025 are eloquent: on CNews, during prime time (7am-10am and 6pm-9pm), the far right accounts for 40.6% of exposure time compared to 15.4% for the left. At night, the ratio reverses — the left rises to 60.1% — allowing the channel to present seemingly balanced overall statistics<sup>[17]</sup>. RSF formally filed a complaint with Arcom<sup>[16]</sup> in January 2026 with a 112-page dossier documenting these "flagrant breaches of pluralism"<sup>[18]</sup>.</p>
+        <p>The figures documented by Reporters Without Borders in November 2025 are eloquent: on CNews, during prime time (7am-10am and 6pm-9pm), the far right accounts for 40.6% of exposure time compared to 15.4% for the left. At night, the ratio reverses — the left rises to 60.1% — allowing the channel to present seemingly balanced overall statistics<sup><a href="#note-17">[17]</a></sup>. RSF formally filed a complaint with Arcom<sup><a href="#note-16">[16]</a></sup> in January 2026 with a 112-page dossier documenting these "flagrant breaches of pluralism"<sup><a href="#note-18">[18]</a></sup>.</p>
 
-        <p>The effectiveness of this machine is measurable: CNews became France's top news channel in audience share in May 2024. What was unspeakable ten years ago — calling unaccompanied minors "thieves, rapists, and murderers," as Éric Zemmour did on air in 2021 — is now normalized, even though that statement cost the channel a €200,000 fine<sup>[20]</sup>.</p>
+        <p>The effectiveness of this machine is measurable: CNews became France's top news channel in audience share in May 2024. What was unspeakable ten years ago — calling unaccompanied minors "thieves, rapists, and murderers," as Éric Zemmour did on air in 2021 — is now normalized, even though that statement cost the channel a €200,000 fine<sup><a href="#note-20">[20]</a></sup>.</p>
 
-        <p>In July 2025, Arcom refused to renew the frequency of C8, another channel in the group, after repeated sanctions related to Cyril Hanouna's show. But CNews, despite complaints and a Council of State ruling in February 2024<sup>[19]</sup>, keeps its frequency. The message is clear: you can transform a news channel into a propaganda organ without losing your broadcasting rights.</p>
+        <p>In July 2025, Arcom refused to renew the frequency of C8, another channel in the group, after repeated sanctions related to Cyril Hanouna's show. But CNews, despite complaints and a Council of State ruling in February 2024<sup><a href="#note-19">[19]</a></sup>, keeps its frequency. The message is clear: you can transform a news channel into a propaganda organ without losing your broadcasting rights.</p>
 
         <h3 class="text-xl font-bold">The Pericles Project: 150 Million for Victory</h3>
 
-        <p>In the media shadows, another billionaire is funding the conquest of power. Pierre-Édouard Stérin<sup>[21]</sup>, 52, founder of Smartbox, France's 81st richest person and a tax exile in Belgium since 2012, revealed the extent of his ambitions in 2024.</p>
+        <p>In the media shadows, another billionaire is funding the conquest of power. Pierre-Édouard Stérin<sup><a href="#note-21">[21]</a></sup>, 52, founder of Smartbox, France's 81st richest person and a tax exile in Belgium since 2012, revealed the extent of his ambitions in 2024.</p>
 
-        <p>The "Pericles Project" — an acronym for "Patriotes Enracinés Résistants Identitaires Chrétiens Libéraux Européens Souverainistes" (Rooted Patriot Resistant Identitarian Christian Liberal European Sovereignists)<sup>[22]</sup> — plans €150 million over ten years to "enable ideological, electoral, and political victory" for declared values: the family as "the foundation of society," the "predominant place of European and Christian civilization," and the fight against "socialism, wokism, Islamism, and immigration."</p>
+        <p>The "Pericles Project" — an acronym for "Patriotes Enracinés Résistants Identitaires Chrétiens Libéraux Européens Souverainistes" (Rooted Patriot Resistant Identitarian Christian Liberal European Sovereignists)<sup><a href="#note-22">[22]</a></sup> — plans €150 million over ten years to "enable ideological, electoral, and political victory" for declared values: the family as "the foundation of society," the "predominant place of European and Christian civilization," and the fight against "socialism, wokism, Islamism, and immigration."</p>
 
-        <p>The documents revealed by L'Humanité in July 2024 detail a total strategy: creating the "first right-wing think tank in France," producing media "barometers" on "Islam and insecurity," training elected officials, and massive support for the RN with the goal of "300 cities to win" in the 2026 municipal elections<sup>[23]</sup>. Stérin's right-hand man, François Durvye, openly presents himself as Marine Le Pen's economic advisor<sup>[24]</sup>.</p>
+        <p>The documents revealed by L'Humanité in July 2024 detail a total strategy: creating the "first right-wing think tank in France," producing media "barometers" on "Islam and insecurity," training elected officials, and massive support for the RN with the goal of "300 cities to win" in the 2026 municipal elections<sup><a href="#note-23">[23]</a></sup>. Stérin's right-hand man, François Durvye, openly presents himself as Marine Le Pen's economic advisor<sup><a href="#note-24">[24]</a></sup>.</p>
 
-        <p>But Pericles is only the visible part. The "Common Good Fund" of Stérin has irrigated for years a network of traditionalist Catholic associations: La Maison de Marthe et Marie, which under the guise of helping pregnant women conducts anti-abortion work<sup>[25]</sup>; the Chants de France app, co-founded by a former GUD member<sup>[26]</sup> whose repertoire included songs from the Third Reich; the Catholic University of the West, discreetly funded since 2023<sup>[27]</sup>. On December 2, 2025, Stérin finalized the acquisition of Valeurs actuelles<sup>[28]</sup>, completing his entry into the media arena.</p>
+        <p>But Pericles is only the visible part. The "Common Good Fund" of Stérin has irrigated for years a network of traditionalist Catholic associations: La Maison de Marthe et Marie, which under the guise of helping pregnant women conducts anti-abortion work<sup><a href="#note-25">[25]</a></sup>; the Chants de France app, co-founded by a former GUD member<sup><a href="#note-26">[26]</a></sup> whose repertoire included songs from the Third Reich; the Catholic University of the West, discreetly funded since 2023<sup><a href="#note-27">[27]</a></sup>. On December 2, 2025, Stérin finalized the acquisition of Valeurs actuelles<sup><a href="#note-28">[28]</a></sup>, completing his entry into the media arena.</p>
 
         <h3 class="text-xl font-bold">The RN: From Conviction to Normalization</h3>
 
         <p>These investments converge toward one objective: bringing the National Rally to power. And this, despite — or thanks to — its judicial conviction.</p>
 
-        <p>On March 31, 2025, Marine Le Pen was sentenced to four years in prison — two of them to be served — and five years of ineligibility with immediate enforcement for embezzlement of public funds<sup>[29]</sup>. For more than ten years (2004-2016), the party had people paid by the European Parliament who were actually working for its French activities. Damage: €2.9 million. The court president justified the immediate enforcement by "the gravity of the facts, their duration, the amounts embezzled, and the objectively characterized risk of recidivism"<sup>[30]</sup>.</p>
+        <p>On March 31, 2025, Marine Le Pen was sentenced to four years in prison — two of them to be served — and five years of ineligibility with immediate enforcement for embezzlement of public funds<sup><a href="#note-29">[29]</a></sup>. For more than ten years (2004-2016), the party had people paid by the European Parliament who were actually working for its French activities. Damage: €2.9 million. The court president justified the immediate enforcement by "the gravity of the facts, their duration, the amounts embezzled, and the objectively characterized risk of recidivism"<sup><a href="#note-30">[30]</a></sup>.</p>
 
-        <p>International reactions revealed the solidarities at play: Trump comparing the conviction to "his own legal troubles," Orbán tweeting "I am Marine!", the Kremlin denouncing "a violation of democratic norms," Bolsonaro — himself ineligible — encouraging Le Pen to "overcome this persecution"<sup>[31]</sup>.</p>
+        <p>International reactions revealed the solidarities at play: Trump comparing the conviction to "his own legal troubles," Orbán tweeting "I am Marine!", the Kremlin denouncing "a violation of democratic norms," Bolsonaro — himself ineligible — encouraging Le Pen to "overcome this persecution"<sup><a href="#note-31">[31]</a></sup>.</p>
 
         <p>The appeal trial opened on January 13, 2026. A decision is expected in summer — potentially in time for 2027 if the conviction is overturned. Meanwhile, polls give Marine Le Pen between 34% and 37% in the first round. Jordan Bardella calls for "popular mobilization" against what he calls an "attack on democracy" — the irony of a party convicted of embezzling European funds positioning itself as a democratic defender seems to escape him.</p>
 
@@ -170,33 +202,33 @@
 
         <h2 class="text-2xl font-bold text-deep-violet">Systemic Racism as Infrastructure</h2>
 
-        <p>These political movements and technological tools do not float in a vacuum. They rely on — and reinforce — systemic racism<sup>[32]</sup> deeply rooted in French institutions.</p>
+        <p>These political movements and technological tools do not float in a vacuum. They rely on — and reinforce — systemic racism<sup><a href="#note-32">[32]</a></sup> deeply rooted in French institutions.</p>
 
-        <p>On June 26, 2025, the European Court of Human Rights ruled against France for discriminatory identity checks — a first<sup>[33]</sup>. The Seydi and Others v. France ruling concerned an applicant who had undergone three checks in ten days, one without legal basis, and who considered himself targeted because of his skin color. The ECHR found that there was a "presumption of discrimination" that the French government had not rebutted.</p>
+        <p>On June 26, 2025, the European Court of Human Rights ruled against France for discriminatory identity checks — a first<sup><a href="#note-33">[33]</a></sup>. The Seydi and Others v. France ruling concerned an applicant who had undergone three checks in ten days, one without legal basis, and who considered himself targeted because of his skin color. The ECHR found that there was a "presumption of discrimination" that the French government had not rebutted.</p>
 
-        <p>This decision came two days after the publication of a survey by the Defender of Rights confirming the scale of the phenomenon. According to this study conducted with 5,030 people, identity checks have exploded: 26% of the population surveyed reports having been checked at least once in the past five years, compared to 16% in 2016<sup>[34]</sup>.</p>
+        <p>This decision came two days after the publication of a survey by the Defender of Rights confirming the scale of the phenomenon. According to this study conducted with 5,030 people, identity checks have exploded: 26% of the population surveyed reports having been checked at least once in the past five years, compared to 16% in 2016<sup><a href="#note-34">[34]</a></sup>.</p>
 
-        <p>But the most damning figures concern discrimination. People perceived as "Arab, Black, or North African" have a 28% chance of being checked multiple times, compared to 12% for people perceived as white. Young racialized men are four times more likely to undergo at least one check, and twelve times more likely to undergo a "thorough" check (search, pat-down)<sup>[35]</sup>.</p>
+        <p>But the most damning figures concern discrimination. People perceived as "Arab, Black, or North African" have a 28% chance of being checked multiple times, compared to 12% for people perceived as white. Young racialized men are four times more likely to undergo at least one check, and twelve times more likely to undergo a "thorough" check (search, pat-down)<sup><a href="#note-35">[35]</a></sup>.</p>
 
-        <p>These checks are regularly accompanied by conduct contrary to professional ethics: 19% of people checked report being addressed informally (using "tu" instead of "vous"), insulted, provoked, or subjected to "brutal behavior"<sup>[36]</sup>.</p>
+        <p>These checks are regularly accompanied by conduct contrary to professional ethics: 19% of people checked report being addressed informally (using "tu" instead of "vous"), insulted, provoked, or subjected to "brutal behavior"<sup><a href="#note-36">[36]</a></sup>.</p>
 
-        <p>In 2024, 9,350 racist crimes and offenses were recorded by police and gendarmerie — an 11% increase compared to 2023, which is part of a continuous rise since 2016<sup>[37]</sup>. These figures represent only the visible part of the phenomenon: they only count complaints actually filed, in a context where victims of racism have good reasons to distrust law enforcement.</p>
+        <p>In 2024, 9,350 racist crimes and offenses were recorded by police and gendarmerie — an 11% increase compared to 2023, which is part of a continuous rise since 2016<sup><a href="#note-37">[37]</a></sup>. These figures represent only the visible part of the phenomenon: they only count complaints actually filed, in a context where victims of racism have good reasons to distrust law enforcement.</p>
 
         <h2 class="text-2xl font-bold text-deep-violet">Algorithmic Video Surveillance: Laboratory of Social Control</h2>
 
-        <p>The Paris 2024 Olympic Games served as a testing ground for a new surveillance technology: algorithmic video surveillance (AVS)<sup>[38]</sup>. Under the guise of counter-terrorism, France became the first country in the European Union to legalize these systems.</p>
+        <p>The Paris 2024 Olympic Games served as a testing ground for a new surveillance technology: algorithmic video surveillance (AVS)<sup><a href="#note-38">[38]</a></sup>. Under the guise of counter-terrorism, France became the first country in the European Union to legalize these systems.</p>
 
         <p>AVS does not just record. It analyzes in real time the behavior of filmed people: crowd movements, presence in a prohibited zone, abandoned objects, "suspicious" behaviors. It is an "algorithmic layer" added to existing cameras, which allows transferring to machines the detection work formerly reserved for humans.</p>
 
-        <p>The law of May 2023 provided for experimentation until March 2025. In February 2025, the government tried to extend the system until 2027 through an amendment slipped into a law on "safety in transport." The Constitutional Council censured this provision in April<sup>[39]</sup>.</p>
+        <p>The law of May 2023 provided for experimentation until March 2025. In February 2025, the government tried to extend the system until 2027 through an amendment slipped into a law on "safety in transport." The Constitutional Council censured this provision in April<sup><a href="#note-39">[39]</a></sup>.</p>
 
-        <p>But as La Quadrature du Net<sup>[40]</sup> documents, AVS has in reality been deployed "for almost a decade in complete illegality" in many French cities. Marseille, Reims, Vannes, Moirans, Saint-Denis: municipalities bought this software without waiting for a legal framework. The Olympics law only "legitimized an existing practice while masking the extent of this reality."</p>
+        <p>But as La Quadrature du Net<sup><a href="#note-40">[40]</a></sup> documents, AVS has in reality been deployed "for almost a decade in complete illegality" in many French cities. Marseille, Reims, Vannes, Moirans, Saint-Denis: municipalities bought this software without waiting for a legal framework. The Olympics law only "legitimized an existing practice while masking the extent of this reality."</p>
 
-        <p>A France Info investigation in November 2025 revealed the "enormous opacity" surrounding these deployments: "Cities don't necessarily communicate about these systems for fear that CNIL will come down on them," confides an elected official under condition of anonymity<sup>[41]</sup>.</p>
+        <p>A France Info investigation in November 2025 revealed the "enormous opacity" surrounding these deployments: "Cities don't necessarily communicate about these systems for fear that CNIL will come down on them," confides an elected official under condition of anonymity<sup><a href="#note-41">[41]</a></sup>.</p>
 
-        <p>The BriefCam software, of Israeli origin, has included a facial recognition function since 2018. According to a report from the general inspectorates, this functionality was used at least once "outside the legal framework" by law enforcement in 2023<sup>[42]</sup>.</p>
+        <p>The BriefCam software, of Israeli origin, has included a facial recognition function since 2018. According to a report from the general inspectorates, this functionality was used at least once "outside the legal framework" by law enforcement in 2023<sup><a href="#note-42">[42]</a></sup>.</p>
 
-        <p>Amnesty International warns: "From algorithmic video surveillance to facial recognition, there is only one step. Technically, it would only be a feature to activate on AVS software."<sup>[43]</sup> In March 2025, Valérie Pécresse, president of the Île-de-France region, declared to Le Parisien: "I am in favor of going even further and using facial recognition for all dangerous persons wanted by police services."</p>
+        <p>Amnesty International warns: "From algorithmic video surveillance to facial recognition, there is only one step. Technically, it would only be a feature to activate on AVS software."<sup><a href="#note-43">[43]</a></sup> In March 2025, Valérie Pécresse, president of the Île-de-France region, declared to Le Parisien: "I am in favor of going even further and using facial recognition for all dangerous persons wanted by police services."</p>
 
         <h2 class="text-2xl font-bold text-deep-violet">A Convergence of Threats</h2>
 
@@ -208,7 +240,7 @@
 
         <p>But their actions converge toward the same horizon: the weakening of democratic checks and balances, the normalization of far-right ideas, the establishment of technological infrastructures of surveillance and control, and the designation of scapegoats — immigrants, Muslims, feminists, anti-racists, environmentalists — as responsible for society's ills.</p>
 
-        <p>What philosopher Achille Mbembe calls "necropolitics"<sup>[44]</sup> — the power to decide who can live and who must die — finds in these convergences a troubling relevance. When ImmigrationOS allows tracking and deporting human beings with Amazon Prime's logistical efficiency<sup>[45]</sup>, when software decides who is "suspicious" in public space, when media dehumanize entire populations daily, the conditions for institutionalized violence are in place.</p>
+        <p>What philosopher Achille Mbembe calls "necropolitics"<sup><a href="#note-44">[44]</a></sup> — the power to decide who can live and who must die — finds in these convergences a troubling relevance. When ImmigrationOS allows tracking and deporting human beings with Amazon Prime's logistical efficiency<sup><a href="#note-45">[45]</a></sup>, when software decides who is "suspicious" in public space, when media dehumanize entire populations daily, the conditions for institutionalized violence are in place.</p>
 
         <h2 class="text-2xl font-bold text-acid-green">What We Can Do</h2>
 
@@ -242,98 +274,98 @@
         </div>
 
         <!-- Notes -->
-        <div class="mt-12 p-6 bg-gray-50 rounded-lg">
+        <div class="mt-12 p-6 bg-gray-50 rounded-lg" id="notes">
           <h3 class="text-lg font-bold mb-4">Notes</h3>
-          <div class="text-sm text-gray-700 space-y-3">
-            <p><sup>[1]</sup> Peter Thiel, "The Education of a Libertarian," <em>Cato Unbound</em>, April 13, 2009. The full essay is accessible on the Cato Institute website.</p>
+          <div class="text-sm text-gray-700 space-y-3 notes-section">
+            <p id="note-1"><sup>[1]</sup> Peter Thiel, "The Education of a Libertarian," <em>Cato Unbound</em>, April 13, 2009. The full essay is accessible on the Cato Institute website.</p>
 
-            <p><sup>[2]</sup> Academy of Moral and Political Sciences: one of the five academies composing the Institut de France, founded in 1795. It brings together personalities from the humanities and social sciences and regularly organizes reflection sessions on social issues.</p>
+            <p id="note-2"><sup>[2]</sup> Academy of Moral and Political Sciences: one of the five academies composing the Institut de France, founded in 1795. It brings together personalities from the humanities and social sciences and regularly organizes reflection sessions on social issues.</p>
 
-            <p><sup>[3]</sup> Palantir Technologies: American company founded in 2003, specializing in big data analysis. Its name refers to the palantíri, the seeing-stones used by Sauron in Tolkien's <em>The Lord of the Rings</em> to surveil Middle-earth.</p>
+            <p id="note-3"><sup>[3]</sup> Palantir Technologies: American company founded in 2003, specializing in big data analysis. Its name refers to the palantíri, the seeing-stones used by Sauron in Tolkien's <em>The Lord of the Rings</em> to surveil Middle-earth.</p>
 
-            <p><sup>[4]</sup> Original quote: "Since 1920, the vast increase in welfare beneficiaries and the extension of the franchise to women — two constituencies that are notoriously tough for libertarians — have rendered the notion of 'capitalist democracy' into an oxymoron."</p>
+            <p id="note-4"><sup>[4]</sup> Original quote: "Since 1920, the vast increase in welfare beneficiaries and the extension of the franchise to women — two constituencies that are notoriously tough for libertarians — have rendered the notion of 'capitalist democracy' into an oxymoron."</p>
 
-            <p><sup>[5]</sup> J.D. Vance: Republican senator from Ohio since 2023, elected Vice President of the United States in November 2024. Author of <em>Hillbilly Elegy</em>, he met Thiel when he was a student at Yale Law School. Thiel invested $15 million in his 2022 Senate campaign.</p>
+            <p id="note-5"><sup>[5]</sup> J.D. Vance: Republican senator from Ohio since 2023, elected Vice President of the United States in November 2024. Author of <em>Hillbilly Elegy</em>, he met Thiel when he was a student at Yale Law School. Thiel invested $15 million in his 2022 Senate campaign.</p>
 
-            <p><sup>[6]</sup> Curtis Yarvin: American blogger and programmer, central figure of the "neoreactionary" (NRx) movement. Under the pseudonym Mencius Moldbug, he developed a radical critique of democracy and advocates authoritarian forms of government inspired by monarchies or corporations.</p>
+            <p id="note-6"><sup>[6]</sup> Curtis Yarvin: American blogger and programmer, central figure of the "neoreactionary" (NRx) movement. Under the pseudonym Mencius Moldbug, he developed a radical critique of democracy and advocates authoritarian forms of government inspired by monarchies or corporations.</p>
 
-            <p><sup>[7]</sup> In-Q-Tel: investment fund created in 1999 by the CIA to fund startups developing technologies useful to American intelligence services.</p>
+            <p id="note-7"><sup>[7]</sup> In-Q-Tel: investment fund created in 1999 by the CIA to fund startups developing technologies useful to American intelligence services.</p>
 
-            <p><sup>[8]</sup> ICE (Immigration and Customs Enforcement): US federal agency responsible for enforcing immigration and customs laws, attached to the Department of Homeland Security (DHS).</p>
+            <p id="note-8"><sup>[8]</sup> ICE (Immigration and Customs Enforcement): US federal agency responsible for enforcing immigration and customs laws, attached to the Department of Homeland Security (DHS).</p>
 
-            <p><sup>[9]</sup> Federal contract 70CTD022FR0000170, April 2025. Documentation obtained by 404 Media and Just Futures Law via Freedom of Information Act (FOIA) requests.</p>
+            <p id="note-9"><sup>[9]</sup> Federal contract 70CTD022FR0000170, April 2025. Documentation obtained by 404 Media and Just Futures Law via Freedom of Information Act (FOIA) requests.</p>
 
-            <p><sup>[10]</sup> According to a CNN report based on internal documents, ImmigrationOS allows agents to "approve raids, record arrests, generate legal documents, and organize deportation flights — all from a single interface."</p>
+            <p id="note-10"><sup>[10]</sup> According to a CNN report based on internal documents, ImmigrationOS allows agents to "approve raids, record arrests, generate legal documents, and organize deportation flights — all from a single interface."</p>
 
-            <p><sup>[11]</sup> Open letter "The Scouring of the Shire," signed by 13 former Palantir employees, May 2025.</p>
+            <p id="note-11"><sup>[11]</sup> Open letter "The Scouring of the Shire," signed by 13 former Palantir employees, May 2025.</p>
 
-            <p><sup>[12]</sup> DGSI (General Directorate of Internal Security): French intelligence service responsible for counter-intelligence, counter-terrorism, and monitoring internal threats. Attached to the Ministry of the Interior.</p>
+            <p id="note-12"><sup>[12]</sup> DGSI (General Directorate of Internal Security): French intelligence service responsible for counter-intelligence, counter-terrorism, and monitoring internal threats. Attached to the Ministry of the Interior.</p>
 
-            <p><sup>[13]</sup> Palantir Technologies press release, December 15, 2025. The contract covers the software platform as well as "integration, support, and assistance services necessary for deployment."</p>
+            <p id="note-13"><sup>[13]</sup> Palantir Technologies press release, December 15, 2025. The contract covers the software platform as well as "integration, support, and assistance services necessary for deployment."</p>
 
-            <p><sup>[14]</sup> OpexNews, "DGSI renews its contract with Palantir for three years," December 15, 2025.</p>
+            <p id="note-14"><sup>[14]</sup> OpexNews, "DGSI renews its contract with Palantir for three years," December 15, 2025.</p>
 
-            <p><sup>[15]</sup> Vincent Bolloré: French businessman, born in 1952, head of the Bolloré Group. He has gradually built a media empire including Canal+ Group (CNews, C8, Canal+), Lagardère News (Europe 1, JDD), and Prisma Media.</p>
+            <p id="note-15"><sup>[15]</sup> Vincent Bolloré: French businessman, born in 1952, head of the Bolloré Group. He has gradually built a media empire including Canal+ Group (CNews, C8, Canal+), Lagardère News (Europe 1, JDD), and Prisma Media.</p>
 
-            <p><sup>[16]</sup> Arcom (Regulatory Authority for Audiovisual and Digital Communication): independent public authority created in 2022 through the merger of CSA and Hadopi, responsible for regulating the French audiovisual and digital sector.</p>
+            <p id="note-16"><sup>[16]</sup> Arcom (Regulatory Authority for Audiovisual and Digital Communication): independent public authority created in 2022 through the merger of CSA and Hadopi, responsible for regulating the French audiovisual and digital sector.</p>
 
-            <p><sup>[17]</sup> Reporters Without Borders, survey "Pluralism in France: on CNews, the great bypass," November 2025. The study analyzed 700,000 news banners on the four French 24-hour news channels during March 2025.</p>
+            <p id="note-17"><sup>[17]</sup> Reporters Without Borders, survey "Pluralism in France: on CNews, the great bypass," November 2025. The study analyzed 700,000 news banners on the four French 24-hour news channels during March 2025.</p>
 
-            <p><sup>[18]</sup> RSF, press release and Arcom complaint, January 15, 2026.</p>
+            <p id="note-18"><sup>[18]</sup> RSF, press release and Arcom complaint, January 15, 2026.</p>
 
-            <p><sup>[19]</sup> Council of State, decision of February 13, 2024, following a complaint by RSF.</p>
+            <p id="note-19"><sup>[19]</sup> Council of State, decision of February 13, 2024, following a complaint by RSF.</p>
 
-            <p><sup>[20]</sup> CSA, decision n°2021-2018 of March 17, 2021, fining CNews €200,000 for Éric Zemmour's comments about unaccompanied minors.</p>
+            <p id="note-20"><sup>[20]</sup> CSA, decision n°2021-2018 of March 17, 2021, fining CNews €200,000 for Éric Zemmour's comments about unaccompanied minors.</p>
 
-            <p><sup>[21]</sup> Pierre-Édouard Stérin: French entrepreneur born in 1974, founder of Smartbox. A self-proclaimed traditionalist Catholic, he left France for Belgium in 2012. He claims to want to "continue making money to serve Christ and France."</p>
+            <p id="note-21"><sup>[21]</sup> Pierre-Édouard Stérin: French entrepreneur born in 1974, founder of Smartbox. A self-proclaimed traditionalist Catholic, he left France for Belgium in 2012. He claims to want to "continue making money to serve Christ and France."</p>
 
-            <p><sup>[22]</sup> Internal document "Pericles Project," revealed by L'Humanité on July 17, 2024.</p>
+            <p id="note-22"><sup>[22]</sup> Internal document "Pericles Project," revealed by L'Humanité on July 17, 2024.</p>
 
-            <p><sup>[23]</sup> Ibid. The document details the "key values" to promote and the electoral strategies envisaged.</p>
+            <p id="note-23"><sup>[23]</sup> Ibid. The document details the "key values" to promote and the electoral strategies envisaged.</p>
 
-            <p><sup>[24]</sup> Observatory of Multinationals, "Facing Pierre-Édouard Stérin, French Tech's great silence," 2025.</p>
+            <p id="note-24"><sup>[24]</sup> Observatory of Multinationals, "Facing Pierre-Édouard Stérin, French Tech's great silence," 2025.</p>
 
-            <p><sup>[25]</sup> Investigations by Le Poulpe and La Déferlante on La Maison de Marthe et Marie branches, 2025.</p>
+            <p id="note-25"><sup>[25]</sup> Investigations by Le Poulpe and La Déferlante on La Maison de Marthe et Marie branches, 2025.</p>
 
-            <p><sup>[26]</sup> GUD (Union Defense Group): violent far-right grouplet, active in French universities since 1968, regularly dissolved and reconstituted.</p>
+            <p id="note-26"><sup>[26]</sup> GUD (Union Defense Group): violent far-right grouplet, active in French universities since 1968, regularly dissolved and reconstituted.</p>
 
-            <p><sup>[27]</sup> Joint investigation by Disclose, La Topette, and Reflets.info on Pierre-Édouard Stérin's funding of the Catholic University of the West, September 2025.</p>
+            <p id="note-27"><sup>[27]</sup> Joint investigation by Disclose, La Topette, and Reflets.info on Pierre-Édouard Stérin's funding of the Catholic University of the West, September 2025.</p>
 
-            <p><sup>[28]</sup> AFP dispatch, "Sale of Valeurs actuelles to trio of investors including Pierre-Edouard Stérin finalized," December 2, 2025.</p>
+            <p id="note-28"><sup>[28]</sup> AFP dispatch, "Sale of Valeurs actuelles to trio of investors including Pierre-Edouard Stérin finalized," December 2, 2025.</p>
 
-            <p><sup>[29]</sup> Paris Criminal Court, judgment of March 31, 2025, case of National Front parliamentary assistants at the European Parliament.</p>
+            <p id="note-29"><sup>[29]</sup> Paris Criminal Court, judgment of March 31, 2025, case of National Front parliamentary assistants at the European Parliament.</p>
 
-            <p><sup>[30]</sup> Quote from presiding judge Bénédicte de Perthuis at the sentencing.</p>
+            <p id="note-30"><sup>[30]</sup> Quote from presiding judge Bénédicte de Perthuis at the sentencing.</p>
 
-            <p><sup>[31]</sup> Reactions compiled by Radio-Canada, "Marine Le Pen, guilty of embezzlement of public funds," April 1, 2025.</p>
+            <p id="note-31"><sup>[31]</sup> Reactions compiled by Radio-Canada, "Marine Le Pen, guilty of embezzlement of public funds," April 1, 2025.</p>
 
-            <p><sup>[32]</sup> Systemic racism: a form of racism embedded in the structures, policies, and institutional practices that produces disadvantages for certain racialized groups regardless of individual intentions.</p>
+            <p id="note-32"><sup>[32]</sup> Systemic racism: a form of racism embedded in the structures, policies, and institutional practices that produces disadvantages for certain racialized groups regardless of individual intentions.</p>
 
-            <p><sup>[33]</sup> European Court of Human Rights, Seydi and Others v. France judgment, June 26, 2025.</p>
+            <p id="note-33"><sup>[33]</sup> European Court of Human Rights, Seydi and Others v. France judgment, June 26, 2025.</p>
 
-            <p><sup>[34]</sup> Defender of Rights, survey "Access to rights — Police/population relations," published June 23, 2025.</p>
+            <p id="note-34"><sup>[34]</sup> Defender of Rights, survey "Access to rights — Police/population relations," published June 23, 2025.</p>
 
-            <p><sup>[35]</sup> Ibid., and Vie-publique.fr synthesis, June 26, 2025.</p>
+            <p id="note-35"><sup>[35]</sup> Ibid., and Vie-publique.fr synthesis, June 26, 2025.</p>
 
-            <p><sup>[36]</sup> Defender of Rights, op. cit.</p>
+            <p id="note-36"><sup>[36]</sup> Defender of Rights, op. cit.</p>
 
-            <p><sup>[37]</sup> Ministerial Statistical Service for Internal Security (SSMSI), "Racist, xenophobic, or anti-religious offenses in 2024," March 2025.</p>
+            <p id="note-37"><sup>[37]</sup> Ministerial Statistical Service for Internal Security (SSMSI), "Racist, xenophobic, or anti-religious offenses in 2024," March 2025.</p>
 
-            <p><sup>[38]</sup> Algorithmic video surveillance (AVS): video surveillance system using artificial intelligence to automatically analyze images and detect behaviors deemed "suspicious" or "abnormal."</p>
+            <p id="note-38"><sup>[38]</sup> Algorithmic video surveillance (AVS): video surveillance system using artificial intelligence to automatically analyze images and detect behaviors deemed "suspicious" or "abnormal."</p>
 
-            <p><sup>[39]</sup> Constitutional Council, decision of April 24, 2025.</p>
+            <p id="note-39"><sup>[39]</sup> Constitutional Council, decision of April 24, 2025.</p>
 
-            <p><sup>[40]</sup> La Quadrature du Net: French association for digital rights defense, created in 2008.</p>
+            <p id="note-40"><sup>[40]</sup> La Quadrature du Net: French association for digital rights defense, created in 2008.</p>
 
-            <p><sup>[41]</sup> France Info, "How algorithmic video surveillance is developing quietly in France," November 24, 2025.</p>
+            <p id="note-41"><sup>[41]</sup> France Info, "How algorithmic video surveillance is developing quietly in France," November 24, 2025.</p>
 
-            <p><sup>[42]</sup> Joint report from the general inspectorates of national police, gendarmerie, and administration, October 2024.</p>
+            <p id="note-42"><sup>[42]</sup> Joint report from the general inspectorates of national police, gendarmerie, and administration, October 2024.</p>
 
-            <p><sup>[43]</sup> Amnesty International France, "From algorithmic video surveillance to facial recognition, there is only one step," 2024.</p>
+            <p id="note-43"><sup>[43]</sup> Amnesty International France, "From algorithmic video surveillance to facial recognition, there is only one step," 2024.</p>
 
-            <p><sup>[44]</sup> Necropolitics: concept developed by Cameroonian philosopher Achille Mbembe (born 1957), which designates contemporary forms of sovereignty based on the power to decide who can live and who must die.</p>
+            <p id="note-44"><sup>[44]</sup> Necropolitics: concept developed by Cameroonian philosopher Achille Mbembe (born 1957), which designates contemporary forms of sovereignty based on the power to decide who can live and who must die.</p>
 
-            <p><sup>[45]</sup> Reference to ICE Director Todd Lyons' statement at the Border Security Expo in April 2025: "I want ICE to work like Amazon Prime, but with human beings."</p>
+            <p id="note-45"><sup>[45]</sup> Reference to ICE Director Todd Lyons' statement at the Border Security Expo in April 2025: "I want ICE to work like Amazon Prime, but with human beings."</p>
           </div>
         </div>
 
